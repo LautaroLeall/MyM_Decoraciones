@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+/* --- Fuentes Globales --- */
+.font-global {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-okinawa {
+  font-family: 'Okinawa', 'Great Vibes', cursive;
+}
+
+.font-signet {
+  font-family: 'Signet Oldstyle', 'Playfair Display', serif;
+}
+
+/* --- Reset base --- */
+body {
+  margin: 0;
+  padding: 0;
+}
