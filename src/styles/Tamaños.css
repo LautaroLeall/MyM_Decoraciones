@@ -1,0 +1,31 @@
+.tamanos-wrapper { padding: 3rem 1rem 4rem; max-width: 80rem; margin: 0 auto; }
+.tamanos-header { text-align: center; margin-bottom: 4rem; }
+.tamanos-title { font-size: 2.25rem; font-weight: bold; color: #0D0D0D; margin-bottom: 1rem; }
+@media (min-width: 768px) { .tamanos-title { font-size: 2.75rem; } }
+.tamanos-subtitle { font-size: 1.125rem; color: rgba(13,13,13,0.7); max-width: 42rem; margin: 0 auto; }
+.tamanos-table-container { background: white; border-radius: 1.5rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); border: 1px solid #F2F2F2; overflow-x: auto; margin-bottom: 5rem; }
+.tamanos-table { width: 100%; text-align: left; border-collapse: collapse; min-width: 800px; }
+.tamanos-thead { background-color: rgba(242,213,224,0.5); }
+.tamanos-th-label { padding: 1.25rem; font-weight: 600; color: #0D0D0D; width: 16.66%; }
+.tamanos-th { padding: 1.25rem; font-weight: bold; color: #0D0D0D; text-align: center; border-left: 1px solid white; width: 16.66%; }
+.tamanos-th-sub { font-size: 0.75rem; font-weight: normal; color: rgba(13,13,13,0.6); }
+.tamanos-tbody { }
+.tamanos-tbody tr + tr { border-top: 1px solid #F2F2F2; }
+.tamanos-row { transition: background-color 0.2s; }
+.tamanos-row:hover { background-color: rgba(242,242,242,0.5); }
+.tamanos-td-label { padding: 1rem 1rem 1rem 1.5rem; color: #0D0D0D; font-weight: 500; }
+.tamanos-td { padding: 1rem; text-align: center; border-left: 1px solid #F2F2F2; color: rgba(13,13,13,0.7); }
+.tamanos-td-highlight { color: #D9B97E; font-weight: 800; }
+.tamanos-td-sm { font-size: 0.875rem; }
+.tamanos-td-muted { font-size: 0.75rem; color: rgba(13,13,13,0.4); }
+.tamanos-td-check { color: #D9B97E; }
+.tamanos-check-icon { margin: 0 auto; }
+.tamanos-section-header { background: linear-gradient(to right, #F2F2F2, transparent); }
+.tamanos-section-title { padding: 0.75rem 1.5rem; font-weight: bold; color: rgba(13,13,13,0.9); font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase; }
+.tamanos-section-icon { display: inline; margin-right: 0.5rem; vertical-align: middle; }
+.tamanos-icon-green { color: #1EBE5D; }
+.tamanos-icon-gold { color: #D9B97E; }
+.tamanos-btn-row { background-color: white; }
+.tamanos-td-empty { padding: 1rem; }
+.tamanos-detail-btn { width: 100%; padding: 0.625rem 0.5rem; background-color: #0D0D0D; color: #F2F2F2; font-weight: bold; border-radius: 0.75rem; transition: all 0.3s; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); font-size: 0.75rem; border: none; cursor: pointer; font-family: inherit; }
+.tamanos-detail-btn:hover { background-color: #D9B97E; color: #0D0D0D; }
