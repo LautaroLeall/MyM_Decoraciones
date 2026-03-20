@@ -1,0 +1,94 @@
+.contratar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.contratar-section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0D0D0D;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contratar-step-badge {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background-color: #D9B97E;
+  color: #0D0D0D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.contratar-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .contratar-steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contratar-step-card {
+  background-color: #F2F2F2;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E5E5E5;
+}
+
+.contratar-step-name {
+  font-weight: bold;
+  color: #0D0D0D;
+  margin-bottom: 0.5rem;
+}
+
+.contratar-step-desc {
+  color: rgba(13, 13, 13, 0.7);
+  font-size: 0.875rem;
+}
+
+.contratar-conditions-title {
+  margin-top: 1rem;
+}
+
+.contratar-conditions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .contratar-conditions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contratar-condition-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid #F2F2F2;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.contratar-condition-name {
+  font-weight: bold;
+  color: #0D0D0D;
+  margin-bottom: 0.5rem;
+}
+
+.contratar-condition-desc {
+  font-size: 0.875rem;
+  color: rgba(13, 13, 13, 0.7);
+}

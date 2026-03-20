@@ -1,0 +1,41 @@
+.requisitos-section {
+  background-color: rgba(242, 213, 224, 0.3);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid #F2D5E0;
+}
+
+.requisitos-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0D0D0D;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.requisitos-title-icon {
+  color: #0D0D0D;
+}
+
+.requisitos-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: rgba(13, 13, 13, 0.8);
+}
+
+.requisitos-item {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.requisitos-check {
+  color: #D9B97E;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}

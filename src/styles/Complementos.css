@@ -1,0 +1,81 @@
+.complementos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 640px) {
+  .complementos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .complementos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .complementos-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.complemento-card {
+  background-color: #F2F2F2;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.complemento-card:hover {
+  border-color: #D9B97E;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.complemento-icon-wrapper {
+  width: 4rem;
+  height: 4rem;
+  background-color: white;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #D9B97E;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.complemento-name {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #0D0D0D;
+  margin-bottom: 0.5rem;
+}
+
+.complemento-price {
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: #D9B97E;
+  padding: 0.25rem 1rem;
+  background-color: white;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.complemento-unit {
+  font-size: 0.75rem;
+  color: rgba(13, 13, 13, 0.5);
+  font-weight: 500;
+}
