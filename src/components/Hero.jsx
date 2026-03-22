@@ -1,6 +1,6 @@
-import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import WhatsAppBtn from './WhatsAppBtn';
+import { MessageCircle } from 'lucide-react';
 import '../styles/Hero.css';
 
 const Hero = ({ navigate }) => {
@@ -13,7 +13,7 @@ const Hero = ({ navigate }) => {
         transition={{ duration: 1.5 }}
       >
         <img
-          src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80"
+          src="./hero-MyM.png"
           alt="Decoración Eventos"
           className="hero-bg-image"
         />
@@ -43,11 +43,15 @@ const Hero = ({ navigate }) => {
           transition={{ delay: 0.7, duration: 0.5 }}
           className="hero-buttons"
         >
-          <WhatsAppBtn
-            label="Consultar por mi evento"
-            text="¡Hola! Vengo de la página web y me gustaría consultar por la decoración para mi evento."
-            className="px-8 py-4 text-lg"
-          />
+          <motion.a 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href={`https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola! Vengo de la página web y me gustaría consultar por la decoración para mi evento.")}`}
+            target="_blank" rel="noopener noreferrer"
+            className="hero-wp-btn px-8 py-4 text-lg"
+          >
+            <MessageCircle size={22} /> Consultar por mi evento
+          </motion.a>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
