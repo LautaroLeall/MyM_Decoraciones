@@ -1,55 +1,68 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
-import Logo from './Logo';
-import WhatsAppBtn from './WhatsAppBtn';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, MessageSquare } from 'lucide-react';
 import '../styles/Navbar.css';
 
-const Navbar = ({ currentPage, navigate }) => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { pathname } = useLocation();
 
-  const handleNavigate = (page) => {
-    navigate(page);
-    setIsMenuOpen(false);
-  };
+  const navLinks = [
+    { path: '/', label: 'Inicio' },
+    { path: '/paquetes', label: 'Paquetes' },
+    { path: '/complementos', label: 'Complementos' },
+    { path: '/contratacion', label: 'Contratación' }
+  ];
 
-  const navPages = ['home', 'paquetes', 'complementos', 'contratacion'];
-  const labels = { home: 'Inicio', paquetes: 'Paquetes', complementos: 'Complementos', contratacion: 'Contratación' };
+  const isActive = (path) => pathname === path;
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-wrapper">
-          {/* Logo */}
-          <div className="navbar-logo group" onClick={() => handleNavigate('home')}>
-            <Logo />
+
+          {/* 🔹 Logo */}
+          <Link to="/" className="navbar-logo group">
             <div>
-              <h1 className="navbar-logo-title">MyM</h1>
-              <p className="navbar-logo-subtitle">Decoración</p>
+              <img src="./logo_MyM.png" alt="Logo MyM" className='w-20 h-20 rounded-full' />
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="navbar-desktop-menu">
-            {navPages.map(page => (
-              <button
-                key={page}
-                onClick={() => handleNavigate(page)}
-                className={`navbar-link ${currentPage === page ? 'navbar-link-active' : ''}`}
+            {navLinks.map(link => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`navbar-link ${isActive(link.path) ? 'navbar-link-active' : ''}`}
               >
-                {labels[page]}
-                {currentPage === page && <motion.div layoutId="activeTab" className="navbar-active-indicator" />}
-              </button>
+                {link.label}
+              </Link>
             ))}
-            <WhatsAppBtn label="Pedir Presupuesto" text="¡Hola! Quisiera realizar una consulta sobre decoraciones." className="px-5 py-2 text-sm" />
+
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href={`https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola! Quisiera realizar una consulta general.")}`}
+              target="_blank" rel="noopener noreferrer"
+              className="navbar-contact-btn px-5 py-2 text-sm"
+            >
+              <MessageSquare size={16} /> Contactar
+            </motion.a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Button */}
           <div className="navbar-mobile-toggle">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="navbar-hamburger">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="navbar-hamburger"
+            >
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
+
         </div>
       </div>
 
@@ -60,15 +73,33 @@ const Navbar = ({ currentPage, navigate }) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="navbar-mobile-wrapper"
+            className="navbar-mobile-menu"
           >
-            <div className="navbar-mobile-menu">
-              {navPages.map(page => (
-                <button key={page} onClick={() => handleNavigate(page)} className="navbar-mobile-link">
-                  {labels[page]}
-                </button>
+            <div className="navbar-mobile-links">
+              {navLinks.map(link => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`navbar-mobile-link ${isActive(link.path) ? 'navbar-mobile-link-active' : ''}`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
               ))}
-              <WhatsAppBtn label="Pedir Presupuesto" text="¡Hola! Quisiera consultar..." className="w-full py-3 mt-4" />
+
+              <div className="mt-4">
+                <motion.a
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  href={`https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola! Quisiera realizar una consulta general.")}`}
+                  target="_blank" rel="noopener noreferrer"
+                  className="navbar-contact-btn w-full py-3"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <MessageSquare size={18} /> Contactar
+                </motion.a>
+              </div>
+
             </div>
           </motion.div>
         )}
