@@ -1,20 +1,78 @@
 @import "tailwindcss";
 
-/* --- Fuentes Globales --- */
-.font-global {
-  font-family: 'Montserrat', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Alex+Brush&display=swap');
+
+:root {
+  /* Brand Colors */
+  --color-black: #050505;
+  --color-cream: #f1e3dd;
+  --color-gold: rgb(216, 193, 131);
+  --color-gold-dark: rgb(155, 137, 89);
+  --color-taupe: rgb(122, 104, 87);
+  --color-white: #ffffff;
+  --color-mint: rgba(208, 237, 235, 1);
+  --color-mint-dark: rgba(165, 216, 212, 1);
+
+  /* Typography */
+  --font-body: 'Montserrat', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-script: 'Alex Brush', cursive;
 }
 
-.font-okinawa {
-  font-family: 'Okinawa', 'Great Vibes', cursive;
+* {
+  box-sizing: border-box;
 }
 
-.font-signet {
-  font-family: 'Signet Oldstyle', 'Playfair Display', serif;
-}
-
-/* --- Reset base --- */
+html,
 body {
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Global Typography Classes for Tailwind usage if needed */
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+/* Common UI Elements */
+.section-title {
+  font-family: var(--font-heading);
+  color: var(--color-black);
+  text-align: center;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-gold);
+  margin: 1rem auto 0;
+  border-radius: 2px;
 }
