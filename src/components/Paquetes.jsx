@@ -1,10 +1,13 @@
-import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
 import { Gem, ChevronRight } from 'lucide-react';
 import { PACKAGES } from '../data/DataPaq';
 import '../styles/Paquetes.css';
 
-const Paquetes = ({ navigate }) => {
+const Paquetes = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="paquetes-section">
       <div className="paquetes-container">
@@ -25,7 +28,7 @@ const Paquetes = ({ navigate }) => {
               whileHover={{ y: -8 }}
               transition={{ delay: i * 0.1, duration: 0.4 }}
               className="paquete-card"
-              onClick={() => navigate('paquete', pkg.id)}
+              onClick={() => navigate(`/paquete/${pkg.id}`)}
             >
               <div className="paquete-image-box">
                 <div className="paquete-icon-box"><Gem size={28} /></div>
@@ -34,9 +37,9 @@ const Paquetes = ({ navigate }) => {
                 <h3 className="paquete-title">{pkg.name}</h3>
                 <p className="paquete-size">{pkg.size}</p>
                 <p className="paquete-desc">{pkg.shortDesc}</p>
-                <button className="paquete-link">
+                <Link to={`/paquete/${pkg.id}`} className="paquete-link" onClick={(e) => e.stopPropagation()}>
                   Ver detalles <ChevronRight size={16} className="paquete-chevron" />
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}
