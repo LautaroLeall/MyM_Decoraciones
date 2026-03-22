@@ -1,10 +1,13 @@
-import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { CheckCircle2, Smile, Star } from 'lucide-react';
 import '../styles/Tamaños.css';
 
-const Tamaños = ({ navigate }) => (
-  <div className="tamanos-wrapper">
+const Tamaños = () => {
+  const navigate = useNavigate();
+  return (
+    <div className="tamanos-wrapper">
     <div className="tamanos-header">
       <h1 className="tamanos-title">Elegí el tamaño ideal</h1>
       <p className="tamanos-subtitle">
@@ -85,7 +88,7 @@ const Tamaños = ({ navigate }) => (
             <td className="tamanos-td-empty"></td>
             {['soft', 'mini', 'express', 'premium', 'gigante'].map(id => (
               <td key={id} className="tamanos-td">
-                <button onClick={() => navigate('paquete', id)} className="tamanos-detail-btn">
+                <button onClick={() => navigate(`/paquete/${id}`)} className="tamanos-detail-btn">
                   Ver detalles
                 </button>
               </td>
@@ -95,6 +98,7 @@ const Tamaños = ({ navigate }) => (
       </table>
     </motion.div>
   </div>
-);
+  );
+};
 
 export default Tamaños;
