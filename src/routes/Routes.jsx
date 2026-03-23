@@ -2,7 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "../page/Home";
 import PaquetesPage from "../page/Paquetes";
-import PaqDetallePage from "../page/DetallesPaq";
+import PaqDetallePage from "../page/PaqueteId";
 import ComplementosPage from "../page/Complementos";
 import ContratacionPage from "../page/Contratacion";
 import NotFound from "../page/NotFound";
