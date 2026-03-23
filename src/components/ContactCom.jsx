@@ -9,20 +9,22 @@ const ContactCom = () => {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      className="contactcom-box"
+      className="contactcom-box relative flex flex-col items-center text-center"
     >
 
-      <h3 className="contactcom-title">¿Querés agregar estos detalles a tu fiesta?</h3>
-      <p className="contactcom-desc">
-        Solicitá los complementos con anticipación para asegurar disponibilidad el día de tu evento. Escribinos y armamos tu presupuesto a medida.
+      <h3 className="contactcom-title mb-5">¿Querés agregar estos detalles a tu fiesta?</h3>
+      <p className="contactcom-desc mb-10">
+        Solicitá los complementos con anticipación para asegurar disponibilidad el día de tu evento.
+        <br />
+        Escribinos y armamos tu presupuesto a medida.
       </p>
 
-      <motion.a 
+      <motion.a
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        href={`https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola! Quisiera consultar los valores para agregar complementos/extras a mi decoración.")}`} 
+        href={`https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola! Quisiera consultar los valores para agregar complementos/extras a mi decoración.")}`}
         target="_blank" rel="noopener noreferrer"
-        className="contactcom-wp-btn px-8 py-4"
+        className="contactcom-wp-btn inline-flex items-center justify-center gap-1 p-4"
       >
         <MessageSquarePlus size={20} /> Agregar Complemento
       </motion.a>
