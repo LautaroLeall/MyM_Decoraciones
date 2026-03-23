@@ -1,12 +1,10 @@
 .navbar {
-  position: fixed;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(216, 193, 132, 0.3);
+  background-color: transparent;
+  backdrop-filter: blur(25px);
+  border-bottom: 1px solid var(--color-taupe);
   z-index: 50;
   transition: all 0.4s ease;
-  box-shadow: 0 4px 20px rgba(5, 5, 5, 0.05);
 }
 
 .navbar-container {
@@ -16,39 +14,19 @@
 }
 
 .navbar-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: 6rem;
 }
 
 .navbar-logo {
-  display: flex;
-  align-items: center;
   text-decoration: none;
   transition: transform 0.3s ease;
 }
 
 .navbar-logo:hover {
   transform: scale(1.05);
-}
-
-.navbar-logo img {
-  border: 2px solid var(--color-gold);
-  padding: 2px;
-  background-color: var(--color-white);
-  box-shadow: 0 4px 10px rgba(216, 193, 132, 0.3);
-  transition: border-color 0.3s ease;
-}
-
-.navbar-logo:hover img {
+  box-shadow: 0 4px 10px var(--color-taupe);
   border-color: var(--color-gold-dark);
-}
-
-.navbar-desktop-menu {
-  display: none;
-  align-items: center;
-  gap: 2.5rem;
+  border-radius: 50%;
 }
 
 @media (min-width: 768px) {
@@ -59,11 +37,10 @@
 
 .navbar-link {
   font-family: var(--font-body);
+  color: var(--color-taupe);
+  text-transform: uppercase;
   font-weight: 500;
   font-size: 0.95rem;
-  color: var(--color-taupe);
-  text-decoration: none;
-  text-transform: uppercase;
   letter-spacing: 1px;
   transition: color 0.3s ease;
   position: relative;
@@ -71,12 +48,12 @@
 }
 
 .navbar-link:hover {
-  color: var(--color-gold-dark);
+  color: var(--color-gold);
 }
 
 .navbar-link-active {
-  color: var(--color-black);
-  font-weight: 700;
+  color: var(--color-gold);
+  font-weight: 800;
 }
 
 .navbar-link-active::after {
@@ -100,11 +77,6 @@
   }
 }
 
-.navbar-mobile-toggle {
-  display: flex;
-  align-items: center;
-}
-
 @media (min-width: 768px) {
   .navbar-mobile-toggle {
     display: none;
@@ -112,11 +84,11 @@
 }
 
 .navbar-hamburger {
-  color: var(--color-black);
+  color: var(--color-taupe);
   background: none;
   border: none;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .navbar-hamburger:hover {
@@ -124,15 +96,13 @@
 }
 
 .navbar-mobile-menu {
-  display: block;
-  background-color: var(--color-white);
-  border-top: 1px solid rgba(216, 193, 132, 0.2);
-  box-shadow: 0 10px 20px rgba(5, 5, 5, 0.1);
-  position: absolute;
+  background-color: transparent;
+  backdrop-filter: blur(25px);
+  border-bottom: 2px solid var(--color-taupe);
   width: 100%;
   left: 0;
+  z-index: 50;
   overflow: hidden;
-  z-index: 40;
 }
 
 @media (min-width: 768px) {
@@ -143,53 +113,37 @@
 
 .navbar-mobile-links {
   padding: 1.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 }
 
 .navbar-mobile-link {
   display: block;
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 600;
+  border-bottom: 1px solid rgba(241, 227, 221, 0.4);
+  font-family: var(--font-body);
   color: var(--color-taupe);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(241, 227, 221, 0.5);
-  /* cream */
-  padding-bottom: 0.75rem;
-  transition: color 0.3s ease, padding-left 0.3s ease;
-}
-
-.navbar-mobile-link:hover {
-  color: var(--color-gold-dark);
-  padding-left: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .navbar-mobile-link-active {
-  color: var(--color-black);
   border-bottom-color: var(--color-gold);
+  color: var(--color-gold);
+  font-weight: 800;
 }
 
 .navbar-contact-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
   background-color: var(--color-gold);
-  color: var(--color-white);
-  border: 1px solid var(--color-gold-dark);
   font-family: var(--font-body);
-  font-weight: 700;
+  color: var(--color-taupe);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
   border-radius: 9999px;
-  text-decoration: none;
+  letter-spacing: 0.5px;
+  font-weight: 700;
   transition: all 0.3s ease;
 }
 
 .navbar-contact-btn:hover {
   background-color: var(--color-gold-dark);
-  color: var(--color-cream);
-  box-shadow: 0 4px 15px var(--color-gold-dark);
+  color: var(--color-white);
 }
