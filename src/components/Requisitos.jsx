@@ -1,4 +1,3 @@
-import React from 'react';
 import { CheckCircle2, MapPin } from 'lucide-react';
 import '../styles/Requisitos.css';
 
@@ -12,17 +11,17 @@ const requisitos = [
 
 const Requisitos = () => {
   return (
-    <section className="requisitos-section">
+    <section className="requisitos-section relative p-8">
 
-      <h2 className="requisitos-title">
+      <h2 className="requisitos-title flex items-center gap-3 mb-5">
         <MapPin className="requisitos-title-icon" /> Requisitos del Espacio
       </h2>
 
-      <ul className="requisitos-list">
+      <ul className="requisitos-list flex flex-col gap-5 p-0 m-0">
         {requisitos.map((text, i) => (
-          <li key={i} className="requisitos-item">
+          <li key={i} className="requisitos-item flex items-start gap-2">
             <CheckCircle2 className="requisitos-check" size={20} />
-            <p>{text}</p>
+            <p className="m-0">{text}</p>
           </li>
         ))}
       </ul>
