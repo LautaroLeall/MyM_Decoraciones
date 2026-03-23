@@ -1,54 +1,43 @@
 .contratar-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
+  margin: 0 auto;
 }
 
 .contratar-section-title {
   font-family: var(--font-heading);
   font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-black);
-  margin-bottom: 2.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  color: var(--color-taupe);
+  text-transform: uppercase;
 }
 
 .contratar-step-badge {
+  background-color: var(--color-taupe);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 50%;
-  background-color: var(--color-gold);
-  color: var(--color-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(216, 193, 132, 0.4);
+  box-shadow: 0px 10px 10px rgba(216, 193, 132, 0.4);
 }
 
 .contratar-steps-grid {
-  display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .contratar-steps-grid { grid-template-columns: repeat(3, 1fr); }
+  .contratar-steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .contratar-step-card {
   background-color: var(--color-white);
-  padding: 2.5rem 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(122, 104, 87, 0.08);
-  border: 1px solid rgba(216, 193, 132, 0.2);
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(122, 104, 87, 0.5);
+  border: 1px solid rgba(216, 193, 132, 0.7);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  position: relative;
 }
 
 .contratar-step-card::after {
@@ -60,12 +49,11 @@
   height: 3px;
   background-color: transparent;
   transition: background-color 0.4s ease;
-  border-radius: 1rem 1rem 0 0;
 }
 
 .contratar-step-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(122, 104, 87, 0.12);
+  box-shadow: 0 15px 35px rgba(122, 104, 87, 0.1);
 }
 
 .contratar-step-card:hover::after {
@@ -74,23 +62,17 @@
 
 .contratar-step-name {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--color-black);
-  margin-bottom: 1rem;
+  color: var(--color-gold-dark);
+  font-size: 1.3rem;
+  line-height: 1.6;
+  text-transform: uppercase;
 }
 
 .contratar-step-desc {
-  font-family: var(--font-body);
-  color: var(--color-taupe);
-  font-size: 0.95rem;
+  font-family: var(--font-heading);
+  color: var(--color-gold-dark);
+  font-size: 1.05rem;
   line-height: 1.6;
-}
-
-.contratar-conditions-title {
-  margin-top: 1rem;
-  position: relative;
-  display: inline-block;
 }
 
 .contratar-conditions-title::after {
@@ -104,41 +86,38 @@
 }
 
 .contratar-conditions-grid {
-  display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-top: 1.5rem;
 }
 
 @media (min-width: 640px) {
-  .contratar-conditions-grid { grid-template-columns: repeat(2, 1fr); }
+  .contratar-conditions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .contratar-condition-card {
   background-color: var(--color-cream);
-  padding: 2rem;
-  border-radius: 1rem;
-  border-left: 4px solid var(--color-gold-dark);
-  box-shadow: 0 4px 15px rgba(5, 5, 5, 0.03);
+  border-left: 5px solid var(--color-gold-dark);
+  box-shadow: 0 4px 16px var(--color-gold);
   transition: transform 0.3s ease;
 }
 
 .contratar-condition-card:hover {
-  transform: translateX(5px);
+  transform: translateX(8px);
 }
 
 .contratar-condition-name {
   font-family: var(--font-heading);
+  color: var(--color-gold-dark);
   font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--color-black);
-  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .contratar-condition-desc {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  color: var(--color-taupe);
+  font-family: var(--font-heading);
+  color: var(--color-gold-dark);
+  font-size: 0.95rem;
   line-height: 1.6;
 }

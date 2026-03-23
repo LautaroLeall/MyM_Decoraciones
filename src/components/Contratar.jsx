@@ -38,24 +38,26 @@ const conditions = [
 
 const Contratar = () => {
   return (
-    <div className="contratar-wrapper">
+    <div className="contratar-wrapper flex flex-col gap-12">
 
       {/* Pasos */}
       <section>
-        <h2 className="contratar-section-title">
-          <span className="contratar-step-badge">1</span> Pasos simples para reservar
+        <h2 className="contratar-section-title flex items-center gap-4 mb-8">
+          <span className="contratar-step-badge flex items-center justify-center">
+            1
+          </span> Pasos simples para reservar
         </h2>
 
-        <div className="contratar-steps-grid">
+        <div className="contratar-steps-grid grid gap-8">
           {steps.map((step, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="contratar-step-card"
+              className="contratar-step-card relative"
             >
-              <h3 className="contratar-step-name">{step.title}</h3>
+              <h3 className="contratar-step-name mb-2">{step.title}</h3>
               <p className="contratar-step-desc">{step.desc}</p>
             </motion.div>
           ))}
@@ -65,14 +67,14 @@ const Contratar = () => {
 
       {/* Condiciones Generales */}
       <section>
-        <h2 className="contratar-section-title contratar-conditions-title">
+        <h2 className="contratar-section-title contratar-conditions-title relative inline-block mb-5">
           Condiciones Generales
         </h2>
 
-        <div className="contratar-conditions-grid">
+        <div className="contratar-conditions-grid grid gap-8 mt-5">
           {conditions.map((cond, i) => (
-            <div key={i} className="contratar-condition-card">
-              <h3 className="contratar-condition-name">{cond.title}</h3>
+            <div key={i} className="contratar-condition-card p-8">
+              <h3 className="contratar-condition-name mb-2">{cond.title}</h3>
               <p className="contratar-condition-desc">{cond.desc}</p>
             </div>
           ))}
