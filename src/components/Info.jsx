@@ -23,8 +23,8 @@ const features = [
 
 const Info = () => {
   return (
-    <section className="info-section">
-      <div className="info-grid">
+    <section className="info-section relative">
+      <div className="info-grid grid text-center gap-5">
         {features.map((feat, i) => (
           <motion.div
             key={i}
@@ -32,10 +32,12 @@ const Info = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: i * 0.2, duration: 0.5 }}
-            className="info-card"
+            className="info-card relative"
           >
-            <div className="info-icon-wrapper">{feat.icon}</div>
-            <h3 className="info-title">{feat.title}</h3>
+            <div className="info-icon-wrapper flex items-center justify-center">
+              {feat.icon}
+            </div>
+            <h3 className="info-title mb-3">{feat.title}</h3>
             <p className="info-desc">{feat.desc}</p>
           </motion.div>
         ))}
