@@ -8,8 +8,8 @@ const Tamaños = () => {
   const navigate = useNavigate();
   return (
     <div className="tamanos-wrapper">
-    <div className="tamanos-header">
-      <h1 className="tamanos-title">Elegí el tamaño ideal</h1>
+    <div className="tamanos-header text-center mb-10">
+      <h2 className="tamanos-title mb-3">Elegí el tamaño ideal</h2>
       <p className="tamanos-subtitle">
         Comparamos nuestras opciones para que te sea más fácil decidir. Adaptamos cada diseño a la dimensión seleccionada.
       </p>
@@ -18,12 +18,12 @@ const Tamaños = () => {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="tamanos-table-container"
+      className="tamanos-table-container mb-10"
     >
-      <table className="tamanos-table">
+      <table className="tamanos-table text-left">
         <thead className="tamanos-thead">
           <tr>
-            <th className="tamanos-th-label">Características</th>
+            <th className="tamanos-th-label"></th>
             <th className="tamanos-th">Soft <br /><span className="tamanos-th-sub">1 Panel</span></th>
             <th className="tamanos-th">Mini <br /><span className="tamanos-th-sub">3 mts</span></th>
             <th className="tamanos-th">Express <br /><span className="tamanos-th-sub">5 mts</span></th>
@@ -59,7 +59,7 @@ const Tamaños = () => {
 
           <tr className="tamanos-section-header">
             <td colSpan="6" className="tamanos-section-title">
-              <Smile size={16} className="tamanos-section-icon tamanos-icon-green" /> Mundo Infantil
+              <Smile size={16} className="tamanos-section-icon" /> Mundo Infantil
             </td>
           </tr>
           <tr className="tamanos-row">
@@ -73,7 +73,7 @@ const Tamaños = () => {
 
           <tr className="tamanos-section-header">
             <td colSpan="6" className="tamanos-section-title">
-              <Star size={16} className="tamanos-section-icon tamanos-icon-gold" /> Celebraciones Especiales
+              <Star size={16} className="tamanos-section-icon" /> Celebraciones Especiales
             </td>
           </tr>
           <tr className="tamanos-row">
