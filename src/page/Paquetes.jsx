@@ -2,7 +2,7 @@ import Tamaños from '../components/Tamaños';
 
 const PaquetesPage = () => {
     return (
-        <div className="pt-15 md:px-5 pb-10 max-w-360 mx-auto">
+        <div className="pt-33 px-5 md:px-10 pb-20 mx-auto flex flex-col gap-12">
             <Tamaños />
         </div>
     );
