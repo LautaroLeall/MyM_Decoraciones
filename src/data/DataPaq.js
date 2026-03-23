@@ -4,13 +4,13 @@ export const PACKAGES = [
     name: 'Soft Deco',
     size: '1 Panel (2 mts de frente)',
     shortDesc: 'Nuestra nueva opción delicada y minimalista, perfecta para festejos reducidos.',
-    image: '',
+    image: '/hero-MyM.png',
     features: [
       'Back Drop 1 panel (diseños elegidos según estilo y temática)',
       'Alfombra 2 mts (césped artificial o pelo sintético)',
       'Mesa cilíndrica y 1 mesa secundaria',
       '1 bandeja de pie y 1 bandeja espejada',
-      '1 cartel de número o cartel de frase LED (según disponibilidad)',
+      '1 cartel de número o frase LED (según disponibilidad)',
       'Iluminación LED (2 reflectores)',
       '1 estructura LED (si el diseño lo amerita)',
       'Globos: 1 bouquet grande'
@@ -23,7 +23,7 @@ export const PACKAGES = [
     name: 'Mini Deco',
     size: '3 mts de largo x 2 mts de frente',
     shortDesc: 'Ideal para espacios íntimos y celebraciones pequeñas.',
-    image: '',
+    image: '/hero-MyM.png',
     features: [
       'Back Drop 3mts (paneles según estilo y temática)',
       'Alfombra 3 mts (césped artificial o pelo sintético)',
@@ -42,7 +42,7 @@ export const PACKAGES = [
     name: 'Deco Express',
     size: '5 mts de largo x 2 mts de frente',
     shortDesc: 'El equilibrio perfecto entre presencia y adaptabilidad para tu salón.',
-    image: '',
+    image: '/hero-MyM.png',
     features: [
       'Back Drop 5mts (paneles según estilo y temática)',
       'Alfombra 5 mts (césped artificial o pelo sintético)',
@@ -61,7 +61,7 @@ export const PACKAGES = [
     name: 'Deco Premium',
     size: '7 mts de largo x 2 mts de frente',
     shortDesc: 'Alto impacto visual con una gran cantidad de detalles y volumen.',
-    image: '',
+    image: '/hero-MyM.png',
     features: [
       'Back Drop 7mts (paneles según estilo y temática)',
       'Alfombra 7 mts (césped artificial o pelo sintético)',
@@ -80,7 +80,7 @@ export const PACKAGES = [
     name: 'Deco Gigante',
     size: '10 mts de largo x 2 mts de frente',
     shortDesc: 'Nuestra opción más espectacular e imponente. Nivel internacional.',
-    image: '',
+    image: '/hero-MyM.png',
     features: [
       'Back Drop 10mts (paneles según estilo y temática)',
       'Alfombra 10 mts (césped artificial o pelo sintético)',
