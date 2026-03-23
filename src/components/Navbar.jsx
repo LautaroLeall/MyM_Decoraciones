@@ -2,7 +2,7 @@ import { useState } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, MessageSquare } from 'lucide-react';
+import { Logs, CircleChevronUp, MessageSquare } from 'lucide-react';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -19,19 +19,19 @@ const Navbar = () => {
   const isActive = (path) => pathname === path;
 
   return (
-    <nav className="navbar">
+    <nav className="navbar fixed">
       <div className="navbar-container">
-        <div className="navbar-wrapper">
+        <div className="navbar-wrapper flex justify-between items-center">
 
-          {/* 🔹 Logo */}
-          <Link to="/" className="navbar-logo group">
+          {/* Logo */}
+          <Link to="/" className="navbar-logo group flex items-center">
             <div>
               <img src="./logo_MyM.png" alt="Logo MyM" className='w-20 h-20 rounded-full' />
             </div>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="navbar-desktop-menu">
+          <div className="navbar-desktop-menu hidden items-center gap-10">
             {navLinks.map(link => (
               <Link
                 key={link.path}
@@ -47,19 +47,19 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }}
               href={`https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola! Quisiera realizar una consulta general.")}`}
               target="_blank" rel="noopener noreferrer"
-              className="navbar-contact-btn px-5 py-2 text-sm"
+              className="navbar-contact-btn inline-flex items-center justify-center gap-2 px-6 py-2"
             >
               <MessageSquare size={16} /> Contactar
             </motion.a>
           </div>
 
           {/* Mobile Button */}
-          <div className="navbar-mobile-toggle">
+          <div className="navbar-mobile-toggle flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="navbar-hamburger"
             >
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              {isMenuOpen ? <CircleChevronUp size={28} /> : <Logs size={28} />}
             </button>
           </div>
 
@@ -73,14 +73,14 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="navbar-mobile-menu"
+            className="navbar-mobile-menu block"
           >
-            <div className="navbar-mobile-links">
+            <div className="navbar-mobile-links flex flex-col gap-5">
               {navLinks.map(link => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`navbar-mobile-link ${isActive(link.path) ? 'navbar-mobile-link-active' : ''}`}
+                  className={`navbar-mobile-link pb-3 ${isActive(link.path) ? 'navbar-mobile-link-active' : ''}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
@@ -93,7 +93,7 @@ const Navbar = () => {
                   whileTap={{ scale: 0.98 }}
                   href={`https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola! Quisiera realizar una consulta general.")}`}
                   target="_blank" rel="noopener noreferrer"
-                  className="navbar-contact-btn w-full py-3"
+                  className="navbar-contact-btn inline-flex items-center justify-center gap-2 w-full py-3.5 text-xl"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <MessageSquare size={18} /> Contactar
