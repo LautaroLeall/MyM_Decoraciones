@@ -1,6 +1,6 @@
 export const COMPLEMENTOS_DATA = [
   {
-    category: "Cartelería y detalles visuales",
+    category: "Cartelería y Detalles Visuales",
     items: [
       {
         id: "c1",
@@ -28,7 +28,7 @@ export const COMPLEMENTOS_DATA = [
     ]
   },
   {
-    category: "Iluminación y efectos",
+    category: "Iluminación y Efectos",
     items: [
       {
         id: "i1",
@@ -45,7 +45,7 @@ export const COMPLEMENTOS_DATA = [
     ]
   },
   {
-    category: "Estructuras temáticas",
+    category: "Estructuras Temáticas",
     items: [
       {
         id: "e1",
@@ -62,7 +62,7 @@ export const COMPLEMENTOS_DATA = [
     ]
   },
   {
-    category: "Muebles y soportes",
+    category: "Muebles y Soportes",
     items: [
       {
         id: "m1",
@@ -103,7 +103,7 @@ export const COMPLEMENTOS_DATA = [
     ]
   },
   {
-    category: "Globos e inflables",
+    category: "Globos e Inflables",
     items: [
       {
         id: "g1",
@@ -120,7 +120,7 @@ export const COMPLEMENTOS_DATA = [
     ]
   },
   {
-    category: "Decoraciones premium",
+    category: "Decoraciones Premium",
     items: [
       {
         id: "d1",
@@ -149,7 +149,7 @@ export const COMPLEMENTOS_DATA = [
     ]
   },
   {
-    category: "Otros destacados",
+    category: "Otros Destacados",
     items: [
       {
         id: "o1",
