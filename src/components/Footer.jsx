@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-dev">
-          <span className="footer-dev-text">Diseño y Desarrollo por</span>
+          <span className="footer-dev-text">Desarrollado por</span>
           <span className="footer-dev-name">{dev.name}</span>
           <div className="footer-dev-links">
             <a href={dev.github} target="_blank" rel="noopener noreferrer" aria-label={`GitHub de ${dev.name}`}>
