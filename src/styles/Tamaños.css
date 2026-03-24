@@ -1,31 +1,56 @@
 .tamanos-wrapper {
+  padding: 3rem 1rem;
   margin: 0 auto;
+  max-width: 70rem;
 }
 
 .tamanos-title {
   font-family: var(--font-heading);
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   color: var(--color-taupe);
   text-transform: uppercase;
+  text-align: center;
 }
 
 .tamanos-subtitle {
   font-family: var(--font-heading);
   color: var(--color-gold-dark);
   font-size: 1.1rem;
-  max-width: 50rem;
+  max-width: 45rem;
   margin: 0 auto;
   line-height: 1.6;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .tamanos-table-container {
   background: var(--color-white);
-  box-shadow: 0 0 40px rgba(216, 193, 132);
-  border: 1px solid rgba(216, 193, 132, 0.5);
+  box-shadow: 0 0 40px var(--color-gold);
+  border: 1px solid var(--color-gold-dark);
   border-radius: 1rem;
   max-width: 70rem;
+  width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 2.5rem;
+}
+
+.tamanos-table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tamanos-table-container::-webkit-scrollbar-track {
+  background-color: var(--color-cream);
+  border-radius: 0 0 1rem 1rem;
+}
+
+.tamanos-table-container::-webkit-scrollbar-thumb {
+  background-color: var(--color-gold);
+  border-radius: 10px;
+}
+
+.tamanos-table-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-gold-dark);
 }
 
 .tamanos-table {
@@ -41,7 +66,7 @@
 
 .tamanos-th {
   width: 16.66%;
-  border-right: 1px solid rgba(216, 193, 132, 0.2);
+  border-right: 1px solid var(--color-gold);
   font-family: var(--font-heading);
   color: var(--color-white);
   text-transform: uppercase;
