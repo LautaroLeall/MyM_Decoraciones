@@ -1,193 +1,106 @@
 .footer {
   background-color: var(--color-cream);
-  color: var(--color-black);
-  padding: 5rem 0 0;
-  /* Only top padding, bottom padding handled differently */
-  margin-top: auto;
-  border-top: 1px solid rgba(216, 193, 132, 0.4);
-  /* subtle gold line */
-  position: relative;
+  padding: 3rem 0 0;
+  border-top: 1px solid var(--color-taupe);
 }
 
-/* Very subtle background texture/gradient for a soft look */
 .footer::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 100%, rgba(208, 237, 235, 0.6), transparent 70%);
+  background: radial-gradient(circle at 50% 100%, var(--color-mint), transparent 70%);
   pointer-events: none;
 }
 
 .footer-grid {
-  max-width: 80rem;
+  max-width: 55rem;
   margin: 0 auto;
-  padding: 0 2rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3.5rem;
-  position: relative;
+  padding: 0 auto;
   z-index: 10;
-  margin-bottom: 4rem;
-}
-
-@media (min-width: 768px) {
-  .footer-grid {
-    grid-template-columns: 1.5fr 1fr 1fr;
-  }
-}
-
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.footer-logo-link {
-  display: inline-block;
-  width: max-content;
-}
-
-.footer-logo-img {
-  width: 5.5rem;
-  height: 5.5rem;
-  border-radius: 50%;
-  border: 2px solid var(--color-white);
-  box-shadow: 0 8px 20px rgba(122, 104, 87, 0.1);
-  transition: transform 0.4s ease;
-}
-
-.footer-logo-link:hover .footer-logo-img {
-  transform: scale(1.05);
-}
-
-.footer-about {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: var(--color-taupe);
-  line-height: 1.7;
-  max-width: 20rem;
+  margin-bottom: 2rem;
 }
 
 .footer-section-heading {
-  font-family: var(--font-heading);
-  color: var(--color-black);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  font-size: 1.15rem;
-  position: relative;
-}
-
-.footer-icon-mint {
+  font-family: var(--font-script);
   color: var(--color-gold-dark);
-  /* Gold contrasts better against cream */
-  flex-shrink: 0;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .footer-links {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
 }
 
 .footer-link {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-family: var(--font-script);
   color: var(--color-taupe);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
   position: relative;
+  transition: all 0.3s ease;
 }
 
 .footer-link:hover {
-  color: var(--color-black);
+  color: var(--color-gold);
   padding-left: 0.5rem;
 }
 
-.footer-contact-item {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: var(--color-taupe);
-  margin-bottom: 1.25rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+.footer-logo-link {
+  width: max-content;
 }
 
-.footer-social {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
+.footer-logo-img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 1px double var(--color-cream);
+  transition: all 0.4s ease;
+}
+
+.footer-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  gap: 0.5rem;
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease;
 }
 
 .footer-instagram-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background-color: var(--color-cream);
-  /* rosa / cream base */
-  color: var(--color-black);
-  border: 1px solid rgba(216, 193, 132);
-  font-family: var(--font-body);
-  font-weight: 600;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: all 0.4s ease;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(5, 5, 5, 0.05);
+  background-color: var(--color-gold-dark);
+  color: var(--color-white);
+  border: 3px solid var(--color-taupe);
 }
 
 .footer-instagram-btn:hover {
-  background-color: var(--color-black);
-  color: var(--color-white);
-  border-color: var(--color-black);
-  box-shadow: 0 6px 15px rgba(5, 5, 5, 0.2);
-  transform: translateY(-2px);
+  background-color: var(--color-taupe);
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  transform: translateX(0.5rem);
 }
 
 .footer-whatsapp-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background-color: var(--color-mint);
-  color: var(--color-black);
-  border: 1px solid rgba(165, 216, 212);
-  font-family: var(--font-body);
-  font-weight: 600;
-  border-radius: 9999px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: all 0.4s ease;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(5, 5, 5, 0.05);
+  background-color: var(--color-mint-dark);
+  color: var(--color-white);
+  border: 3px solid var(--color-mint-darker);
 }
 
 .footer-whatsapp-btn:hover {
-  background-color: var(--color-black);
-  color: var(--color-white);
-  border-color: var(--color-black);
-  box-shadow: 0 6px 15px rgba(5, 5, 5, 0.2);
-  transform: translateY(-2px);
+  background-color: var(--color-mint-darker);
+  color: var(--color-mint);
+  border-color: var(--color-mint);
+  transform: translateX(0.5rem);
 }
 
 .footer-bottom {
   border-top: 1px solid rgba(122, 104, 87, 0.15);
-  /* ultra thin minimal line */
-  position: relative;
   z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
   padding: 1.5rem 2rem;
   max-width: 80rem;
   margin: 0 auto;
@@ -201,20 +114,17 @@
 }
 
 .footer-bottom-copy {
-  font-family: var(--font-body);
+  font-family: var(--font-script);
   font-size: 0.8rem;
-  color: rgba(122, 104, 87, 0.8);
-  letter-spacing: 0.3px;
+  color: var(--color-gold-dark);
+  letter-spacing: 0.5px;
 }
 
 /* Dev Section Styles */
 .footer-dev {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  color: rgba(122, 104, 87, 0.7);
+  font-family: var(--font-script);
+  font-size: 0.85rem;
+  color: var(--color-taupe);
   letter-spacing: 0.5px;
 }
 
@@ -223,26 +133,39 @@
 }
 
 .footer-dev-name {
-  font-weight: 700;
   color: var(--color-gold-dark);
+  letter-spacing: 0.5px;
+  font-weight: 800;
 }
 
 .footer-dev-links {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  border-left: 1px solid rgba(122, 104, 87, 0.3);
+  border-left: 1px solid var(--color-gold);
   padding-left: 0.75rem;
 }
 
 .footer-dev-links a {
-  color: rgba(122, 104, 87, 0.6);
+  color: var(--color-gold-dark);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
 }
 
 .footer-dev-links a:hover {
-  color: var(--color-mint-dark);
+  color: var(--color-taupe);
   transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+
+  .footer-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-logo-link {
+    margin-bottom: 1rem;
+  }
 }

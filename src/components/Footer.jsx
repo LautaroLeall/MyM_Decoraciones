@@ -12,41 +12,38 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer">
-      <div className="footer-grid">
+    <footer className="footer relative mt-auto">
+      <div className="footer-grid relative flex items-center justify-between">
         <div className="footer-brand">
-          <Link to="/" className="footer-logo-link">
-            <img src="./logo_MyM.png" alt="Logo MyM" className="footer-logo-img" />
-          </Link>
-          <p className="footer-about">
-            Creando espacios fabulosos que quedarán siempre en tu memoria.
-          </p>
-        </div>
-
-        <div className="footer-links-col">
-          <h3 className="footer-section-heading">Enlaces Rápidos</h3>
-          <ul className="footer-links">
-            <li><Link to="/paquetes" className="footer-link">Paquetes</Link></li>
-            <li><Link to="/complementos" className="footer-link">Complementos</Link></li>
-            <li><Link to="/contratacion" className="footer-link">Contratación</Link></li>
+          <h3 className="footer-section-heading relative mb-4">
+            Enlaces Rápidos
+          </h3>
+          <ul className="footer-links flex flex-col gap-5 p-0 m-0">
+            <li>
+              <Link to="/paquetes" className="footer-link">Paquetes</Link>
+            </li>
+            <li>
+              <Link to="/complementos" className="footer-link">Complementos</Link>
+            </li>
+            <li>
+              <Link to="/contratacion" className="footer-link">Contratación</Link>
+            </li>
           </ul>
         </div>
 
-        <div className="footer-contact-col">
-          <h3 className="footer-section-heading">Contacto</h3>
-          <p className="footer-contact-item">
-            <MapPin size={18} className="footer-icon-mint" /> Yerba Buena, Tucumán
-          </p>
-          <p className="footer-contact-item">
-            <Phone size={18} className="footer-icon-mint" /> +54 9 3814 43-0041
-          </p>
+        <div className="footer-links-col">
+          <Link to="/" className="footer-logo-link inline-block">
+            <img src="./logo_MyM.png" alt="Logo MyM" className="footer-logo-img" />
+          </Link>
+        </div>
 
-          <div className="footer-social">
+        <div className="footer-contact-col">
+          <div className="footer-social flex flex-col gap-6">
             <a
               href={`https://wa.me/5493814430041?text=${encodeURIComponent("Hola MyM, visito su web y quiero pedir un presupuesto.")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-whatsapp-btn w-full justify-center py-2.5 text-sm"
+              className="footer-btn footer-whatsapp-btn w-full justify-center p-3"
             >
               <MessageCircle size={18} /> WhatsApp
             </a>
@@ -54,7 +51,7 @@ const Footer = () => {
               href="https://www.instagram.com/mymdecoracionparafiestas/"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-instagram-btn w-full py-2.5 text-sm"
+              className="footer-btn footer-instagram-btn w-full p-3"
             >
               <Instagram size={18} /> Instagram
             </a>
@@ -62,20 +59,20 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="footer-bottom">
+      <div className="footer-bottom relative flex flex-col items-center justify-center gap-4">
         <div className="footer-bottom-copy">
-          <p>© 2026 MyM Decoraciones. Todos los derechos reservados.</p>
+          <p>© 2026 MyM Decoraciones.</p>
         </div>
 
-        <div className="footer-dev">
+        <div className="footer-dev flex items-center gap-2">
           <span className="footer-dev-text">Desarrollado por</span>
           <span className="footer-dev-name">{dev.name}</span>
-          <div className="footer-dev-links">
+          <div className="footer-dev-links flex items-center gap-2">
             <a href={dev.github} target="_blank" rel="noopener noreferrer" aria-label={`GitHub de ${dev.name}`}>
-              <Github size={15} />
+              <Github size={16} />
             </a>
             <a href={dev.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn de ${dev.name}`}>
-              <Linkedin size={15} />
+              <Linkedin size={16} />
             </a>
           </div>
         </div>
