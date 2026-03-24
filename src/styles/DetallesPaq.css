@@ -1,6 +1,7 @@
 .detalles-container {
-  max-width: 70rem;
+  padding: 3rem 1rem;
   margin: 0 auto;
+  max-width: 70rem;
 }
 
 /* BOTON VOLVER */

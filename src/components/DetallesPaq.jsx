@@ -21,7 +21,7 @@ const DetallesPaq = () => {
 
   return (
     <div className="detalles-container">
-      <button onClick={() => navigate('/paquetes')} className="detalles-back-btn inline-flex items-center p-0 mb-5">
+      <button onClick={() => navigate('/paquetes')} className="detalles-back-btn inline-flex items-center p-0 mb-8">
         <ArrowLeft size={20} className="detalles-back-icon mr-2" />
         Volver a comparativa
       </button>
