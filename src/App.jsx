@@ -1,5 +1,5 @@
 // src/App.jsx
-import AppRoutes from './routes/routes';
+import AppRoutes from './routes/Routes';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
