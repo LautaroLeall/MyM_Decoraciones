@@ -1,5 +1,7 @@
 .contratar-wrapper {
+  padding: 3rem 2rem;
   margin: 0 auto;
+  max-width: 70rem;
 }
 
 .contratar-section-title {
