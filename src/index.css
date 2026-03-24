@@ -15,7 +15,7 @@
   /* Typography */
   --font-body: 'Montserrat', sans-serif;
   --font-heading: 'Playfair Display', serif;
-  --font-script: 'Alex Brush', cursive;
+  --font-script: 'Alex Brush';
 }
 
 * {
