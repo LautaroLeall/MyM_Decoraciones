@@ -36,12 +36,12 @@
 }
 
 .navbar-link {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   color: var(--color-taupe);
   text-transform: uppercase;
-  font-weight: 500;
-  font-size: 0.95rem;
-  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
   transition: color 0.3s ease;
   position: relative;
   padding: 0.5rem 0;
@@ -118,12 +118,12 @@
 .navbar-mobile-link {
   display: block;
   border-bottom: 1px solid rgba(241, 227, 221, 0.4);
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   color: var(--color-taupe);
   text-transform: uppercase;
-  font-size: 1.4rem;
-  font-weight: 500;
-  letter-spacing: 1px;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
 }
 
 .navbar-mobile-link-active {
@@ -134,7 +134,7 @@
 
 .navbar-contact-btn {
   background-color: var(--color-gold);
-  font-family: var(--font-body);
+  font-family: var(--font-script);
   color: var(--color-taupe);
   text-transform: uppercase;
   border-radius: 9999px;
