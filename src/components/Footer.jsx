@@ -1,7 +1,6 @@
-// eslint-disable-next-line no-unused-vars
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Instagram, Github, Linkedin, MessageCircle } from 'lucide-react';
+import { Instagram, Github, Linkedin } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
 import '../styles/Footer.css';
 
 const Footer = () => {
@@ -38,22 +37,22 @@ const Footer = () => {
         </div>
 
         <div className="footer-contact-col">
-          <div className="footer-social flex flex-col gap-6">
+          <div className="footer-social flex gap-6">
             <a
               href={`https://wa.me/5493814430041?text=${encodeURIComponent("Hola MyM, visito su web y quiero pedir un presupuesto.")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-btn footer-whatsapp-btn w-full justify-center p-3"
+              className="footer-btn footer-whatsapp-btn w-full justify-center p-1"
             >
-              <MessageCircle size={18} /> WhatsApp
+              <FaWhatsapp size={33} />
             </a>
             <a
               href="https://www.instagram.com/mymdecoracionparafiestas/"
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-btn footer-instagram-btn w-full p-3"
+              className="footer-btn footer-instagram-btn w-full justify-center p-1"
             >
-              <Instagram size={18} /> Instagram
+              <Instagram size={33} />
             </a>
           </div>
         </div>
