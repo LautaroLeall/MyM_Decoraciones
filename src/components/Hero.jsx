@@ -13,7 +13,7 @@ const Hero = ({ navigate }) => {
         transition={{ duration: 1.5 }}
       >
         <img
-          src="./hero-MyM_1.png"
+          src="./hero-MyM.png"
           alt="Decoración Eventos"
           className="hero-bg-image"
         />
