@@ -103,11 +103,11 @@ const Complementos = () => {
 
               <div className="modal-action flex justify-center">
                 <motion.a
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.95 }}
                   href={`https://wa.me/5493814430041?text=${encodeURIComponent(`¡Hola MyM! Quiero consultar sobre el complemento extra: *${selectedExtra.name}* (${selectedExtra.price}).`)}`}
                   target="_blank" rel="noopener noreferrer"
-                  className="modal-wp-btn inline-flex items-center justify-center gap-2 p-3"
+                  className="modal-wp-btn inline-flex items-center justify-center gap-3 p-5"
                 >
                   <MessageSquarePlus size={20} /> Agregar Complemento
                 </motion.a>
