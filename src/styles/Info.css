@@ -77,7 +77,7 @@
 }
 
 .info-desc {
-  font-family: var(--font-body);
+  font-family: var(--font-script);
   color: var(--color-mint-darker);
   font-size: 1rem;
   font-weight: 600;

@@ -48,7 +48,7 @@
 }
 
 .hero-subtitle {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   color: var(--color-white);
   text-shadow: 0 0 10px var(--color-mint-dark);
   font-size: 0.85rem;
@@ -80,7 +80,7 @@
 }
 
 .hero-wp-btn {
-  font-family: var(--font-body);
+  font-family: var(--font-script);
   color: var(--color-gold);
   border: 2px solid var(--color-gold);
   box-shadow: 0 0 20px var(--color-gold-dark);
@@ -102,7 +102,7 @@
 }
 
 .hero-secondary-btn {
-  font-family: var(--font-body);
+  font-family: var(--font-script);
   color: var(--color-mint);
   border: 2px solid var(--color-mint);
   box-shadow: 0 0 20px var(--color-mint-dark);
