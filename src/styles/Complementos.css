@@ -82,7 +82,7 @@
 
 .complemento-name {
   font-family: var(--font-script);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: var(--color-taupe);
 }
 
@@ -100,10 +100,10 @@
   width: auto;
   background: transparent;
   border: none;
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-weight: 700;
   color: var(--color-mint-dark);
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   padding: 0 0.5rem;
@@ -211,7 +211,7 @@
   color: var(--color-taupe);
   letter-spacing: 3px;
   text-transform: uppercase;
-  font-size: 1.9rem;
+  font-size: 1.8rem;
   line-height: 1.2;
 }
 
@@ -225,7 +225,7 @@
   font-family: var(--font-heading);
   color: var(--color-taupe);
   background-color: var(--color-cream);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border-radius: 9999px;
   padding: 0.5rem 1rem;
 }
@@ -233,7 +233,7 @@
 .modal-desc {
   font-family: var(--font-heading);
   color: var(--color-gold-dark);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -241,17 +241,15 @@
 }
 
 .modal-wp-btn {
-  background-color: var(--color-mint);
-  color: var(--color-black);
-  border: 1px solid var(--color-mint-dark);
-  font-family: var(--font-body);
+  background-color: var(--color-mint-darker);
+  color: var(--color-white);
+  border: 5px double var(--color-mint);
+  font-family: var(--font-heading);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   border-radius: 9999px;
-  text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(165, 216, 212, 0.3);
 }
 
 .modal-wp-btn:hover {
