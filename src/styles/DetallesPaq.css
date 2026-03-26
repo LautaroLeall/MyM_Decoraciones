@@ -42,8 +42,8 @@
 /* IMAGEN */
 .detalles-header-img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 50vh;
+  object-fit: contain;
 }
 
 .btn-img {
@@ -78,6 +78,12 @@
 }
 
 @media (max-width: 768px) {
+  .detalles-header-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
   .btn-img {
     border: 1px solid var(--color-gold);
     top: 65%;
