@@ -26,7 +26,7 @@
 .detalles-card {
   box-shadow: 0 0 50px var(--color-gold-dark);
   border: 1px solid var(--color-gold);
-  background: var(--color-white);
+  background-color: var(--color-white);
   border-radius: 1rem;
   overflow: hidden;
 }
@@ -34,8 +34,9 @@
 /* HEADER */
 .detalles-header {
   border-bottom: 3px solid var(--color-taupe);
-  background: var(--color-cream);
+  background-color: var(--color-cream);
   height: auto;
+  overflow: hidden;
 }
 
 /* IMAGEN */
@@ -43,6 +44,69 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+.btn-img {
+  background-color: var(--color-taupe);
+  border: 5px double var(--color-gold);
+  color: var(--color-gold);
+  top: 50%;
+  cursor: pointer;
+  border-radius: 9999px;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.btn-img-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.btn-prev-img {
+  left: 1rem;
+}
+
+.btn-next-img {
+  right: 1rem;
+}
+
+.btn-img:hover {
+  transform: scale(1.1);
+  background-color: var(--color-gold);
+  color: var(--color-taupe);
+  border-color: var(--color-taupe);
+}
+
+@media (max-width: 768px) {
+  .btn-img {
+    border: 1px solid var(--color-gold);
+    top: 65%;
+  }
+
+  .btn-img:hover {
+    transform: none;
+    background-color: var(--color-taupe);
+    color: var(--color-gold);
+    border: 1px solid var(--color-gold);
+  }
+
+  .btn-img-icon {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+}
+
+.detalles-pagination {
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.detalles-pagination-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
 }
 
 .detalles-title {
