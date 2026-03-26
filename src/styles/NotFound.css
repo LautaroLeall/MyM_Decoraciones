@@ -6,7 +6,7 @@
 
 .notfound-container {
   max-width: 40rem;
-  background-color: var(--color-cream);
+  background-color: rgba(208, 237, 235, 0.5);
   border: 1px solid var(--color-mint-dark);
   padding: 4rem 2rem;
 }
