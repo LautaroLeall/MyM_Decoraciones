@@ -4,7 +4,14 @@ export const PACKAGES = [
     name: 'Soft Deco',
     size: '1 Panel (2 mts de frente)',
     shortDesc: 'Nuestra nueva opción delicada y minimalista, perfecta para festejos reducidos.',
-    image: '/hero-MyM.png',
+    images: [
+      '/soft/soft-0.png',
+      '/soft/soft-1.png',
+      '/soft/soft-2.png',
+      '/soft/soft-3.png',
+      '/soft/soft-4.png',
+      '/soft/soft-5.png'
+    ],
     features: [
       'Back Drop 1 panel (diseños elegidos según estilo y temática)',
       'Alfombra 2 mts (césped artificial o pelo sintético)',
@@ -23,7 +30,14 @@ export const PACKAGES = [
     name: 'Mini Deco',
     size: '3 mts de largo x 2 mts de frente',
     shortDesc: 'Ideal para espacios íntimos y celebraciones pequeñas.',
-    image: '/hero-MyM.png',
+    images: [
+      '/mini/mini-0.png',
+      '/mini/mini-1.png',
+      '/mini/mini-2.png',
+      '/mini/mini-3.png',
+      '/mini/mini-4.png',
+      '/mini/mini-5.png'
+    ],
     features: [
       'Back Drop 3mts (paneles según estilo y temática)',
       'Alfombra 3 mts (césped artificial o pelo sintético)',
@@ -42,7 +56,14 @@ export const PACKAGES = [
     name: 'Deco Express',
     size: '5 mts de largo x 2 mts de frente',
     shortDesc: 'El equilibrio perfecto entre presencia y adaptabilidad para tu salón.',
-    image: '/hero-MyM.png',
+    images: [
+      '/express/express-0.png',
+      '/express/express-1.png',
+      '/express/express-2.png',
+      '/express/express-3.png',
+      '/express/express-4.png',
+      '/express/express-5.png'
+    ],
     features: [
       'Back Drop 5mts (paneles según estilo y temática)',
       'Alfombra 5 mts (césped artificial o pelo sintético)',
@@ -61,7 +82,14 @@ export const PACKAGES = [
     name: 'Deco Premium',
     size: '7 mts de largo x 2 mts de frente',
     shortDesc: 'Alto impacto visual con una gran cantidad de detalles y volumen.',
-    image: '/hero-MyM.png',
+    images: [
+      '/premium/premium-0.png',
+      '/premium/premium-1.png',
+      '/premium/premium-2.png',
+      '/premium/premium-3.png',
+      '/premium/premium-4.png',
+      '/premium/premium-5.png'
+    ],
     features: [
       'Back Drop 7mts (paneles según estilo y temática)',
       'Alfombra 7 mts (césped artificial o pelo sintético)',
@@ -80,7 +108,14 @@ export const PACKAGES = [
     name: 'Deco Gigante',
     size: '10 mts de largo x 2 mts de frente',
     shortDesc: 'Nuestra opción más espectacular e imponente. Nivel internacional.',
-    image: '/hero-MyM.png',
+    images: [
+      '/gigante/gigante-0.png',
+      '/gigante/gigante-1.png',
+      '/gigante/gigante-2.png',
+      '/gigante/gigante-3.png',
+      '/gigante/gigante-4.png',
+      '/gigante/gigante-5.png'
+    ],
     features: [
       'Back Drop 10mts (paneles según estilo y temática)',
       'Alfombra 10 mts (césped artificial o pelo sintético)',
