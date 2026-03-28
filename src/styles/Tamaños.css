@@ -201,3 +201,53 @@
   color: var(--color-white);
   transform: translateY(-5px);
 }
+
+@media (max-width: 768px) {
+  .tamanos-table-container {
+    margin-bottom: 0;
+  }
+
+  .tamanos-td-label {
+    font-size: 0.8rem;
+  }
+
+  .tamanos-td {
+    font-size: 0.8rem;
+  }
+
+  .tamanos-th {
+    font-size: 0.7rem;
+  }
+
+  .tamanos-th-sub {
+    font-size: 0.6rem;
+  }
+
+  .tamanos-section-title {
+    font-size: 0.8rem;
+  }
+
+  .tamanos-detail-btn {
+    font-size: 0.6rem;
+  }
+
+  .tamanos-td-label {
+    padding: 1rem 1.5rem;
+  }
+
+  .tamanos-td {
+    padding: 1rem 1rem;
+  }
+
+  .tamanos-th {
+    padding: 1rem 1rem;
+  }
+
+  .tamanos-section-title {
+    padding: 1rem 1.5rem;
+  }
+
+  .tamanos-detail-btn {
+    padding: 0.75rem 1rem;
+  }
+}
