@@ -123,3 +123,17 @@
   font-size: 0.95rem;
   line-height: 1.6;
 }
+
+@media (max-width: 768px) {
+  .contratar-condition-desc {
+    font-size: 0.85rem;
+  }
+
+  .contratar-step-name {
+    font-size: 1.1rem;
+  }
+
+  .contratar-step-desc {
+    font-size: 0.9rem;
+  }
+}
