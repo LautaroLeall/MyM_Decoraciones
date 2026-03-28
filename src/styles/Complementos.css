@@ -213,12 +213,6 @@
   line-height: 1.2;
 }
 
-@media (max-width: 768px) {
-  .modal-title {
-    font-size: 1.4rem;
-  }
-}
-
 .modal-price {
   font-family: var(--font-heading);
   color: var(--color-taupe);
@@ -257,7 +251,32 @@
 }
 
 @media (max-width: 768px) {
-  .modal-wp-btn {
+  .complemento-name {
+    font-size: 1rem;
+  }
+
+  .complemento-price-badge {
     font-size: 0.8rem;
+  }
+
+  .complemento-action-btn {
+    font-size: 0.8rem;
+  }
+
+  .modal-title {
+    font-size: 1.2rem;
+  }
+
+  .modal-wp-btn {
+    padding: 0.8rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .modal-desc {
+    font-size: 0.8rem;
+  }
+
+  .modal-price {
+    font-size: 1rem;
   }
 }
