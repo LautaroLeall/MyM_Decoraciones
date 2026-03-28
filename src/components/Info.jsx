@@ -6,7 +6,7 @@ import '../styles/Info.css';
 const features = [
   {
     icon: <Star size={32} />,
-    title: "+8 Años de Experiencia",
+    title: "+10 Años de Experiencia",
     desc: "Calidad óptima y los mejores diseños de autor para que tu fiesta sea única."
   },
   {
