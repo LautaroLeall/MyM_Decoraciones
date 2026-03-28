@@ -27,7 +27,7 @@
   box-shadow: 0 0 50px var(--color-gold-dark);
   border: 1px solid var(--color-gold);
   background-color: var(--color-white);
-  border-radius: 1rem;
+  border-radius: 0 0 1.5rem 1.5rem;
   overflow: hidden;
 }
 
@@ -35,6 +35,7 @@
 .detalles-header {
   border-bottom: 3px solid var(--color-taupe);
   background-color: var(--color-cream);
+  border-radius: 1.5rem 1.5rem 0 0;
   height: auto;
   overflow: hidden;
 }
@@ -148,7 +149,7 @@
   color: var(--color-white);
   padding: 0.5rem 1.25rem;
   border-radius: 9999px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -217,6 +218,32 @@
   font-size: 1rem;
   font-weight: 700;
   transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .detalles-badge {
+    display: block;
+    text-align: center;
+    font-size: 0.55rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .detalles-desc {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .detalles-quote-title {
+    font-size: 1.2rem;
+  }
+
+  .detalles-quote-sub {
+    font-size: 0.7rem;
+  }
+
+  .detalles-paq-btn {
+    font-size: 0.9rem;
+  }
 }
 
 .detalles-paq-btn:hover {
