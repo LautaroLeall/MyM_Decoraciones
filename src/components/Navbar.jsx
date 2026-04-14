@@ -1,110 +1,155 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
-import { Logs, CircleChevronUp, MessageSquare } from 'lucide-react';
+import { Menu, X, MessageCircle } from 'lucide-react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
+  // Controla apertura/cierre del menú mobile
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { pathname } = useLocation();
+
+  // Detecta scroll para cambiar estilos del navbar
+  const [scrolled, setScrolled] = useState(false);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, [location.pathname]);
 
   const navLinks = [
     { path: '/', label: 'Inicio' },
     { path: '/paquetes', label: 'Paquetes' },
     { path: '/complementos', label: 'Complementos' },
-    { path: '/contratacion', label: 'Contratación' }
+    { path: '/contratacion', label: 'Proceso' },
   ];
 
-  const isActive = (path) => pathname === path;
+  const wpUrl =
+    'https://wa.me/5493814430041?text=' +
+    encodeURIComponent(
+      '¡Hola MyM! ✨ Vengo de la web y quiero consultar por una decoración.'
+    );
 
   return (
-    <nav className="navbar fixed">
-      <div className="navbar-container">
-        <div className="navbar-wrapper flex justify-between items-center">
-
-          {/* Logo */}
-          <Link to="/" className="navbar-logo group flex items-center">
-            <div>
-              <img src="./logo_MyM.png" alt="Logo MyM" className='w-20 h-20 rounded-full' />
+    <header className={`navbar-header fixed ${scrolled ? 'scrolled' : 'transparent'}`}>
+      <div className="navbar-container mx-auto px-8">
+        <div className="navbar-inner flex justify-between items-center">
+          <div
+            className="navbar-logo-group flex items-center"
+            onClick={() => {
+              setIsMenuOpen(false);
+              navigate('/');
+            }}
+          >
+            <div className="navbar-logo-image-container flex items-center">
+              <img
+                src="/logo_MyM-sinFondo.png"
+                alt="MyM Decoraciones Logo"
+                className="navbar-logo-img"
+              />
             </div>
-          </Link>
+          </div>
 
-          {/* Desktop Menu */}
-          <div className="navbar-desktop-menu hidden items-center gap-10">
-            {navLinks.map(link => (
-              <Link
+          {/* MENÚ DESKTOP */}
+          <nav className="navbar-desktop-nav items-center gap-12">
+            {navLinks.map((link) => (
+              <NavLink
                 key={link.path}
                 to={link.path}
-                className={`navbar-link ${isActive(link.path) ? 'navbar-link-active' : ''}`}
+                className={({ isActive }) =>
+                  `navbar-nav-link relative ${isActive ? 'active' : 'inactive'}`
+                }
               >
                 {link.label}
-              </Link>
+
+                {/* Indicador animado debajo del link activo */}
+                {location.pathname === link.path && (
+                  <motion.div
+                    layoutId="navIndicator"
+                    className="navbar-link-indicator absolute"
+                  />
+                )}
+              </NavLink>
             ))}
 
+            {/* Botón WhatsApp Desktop */}
             <motion.a
-              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href={`https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola! Quisiera realizar una consulta general.")}`}
-              target="_blank" rel="noopener noreferrer"
-              className="navbar-contact-btn inline-flex items-center justify-center gap-2 px-6 py-2"
+              href={wpUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar-cta-button inline-flex items-center justify-center gap-2 px-5 py-3.5"
             >
-              <MessageSquare size={16} /> Contactar
+              <MessageCircle size={18} />
+              Contactar
             </motion.a>
-          </div>
+          </nav>
 
-          {/* Mobile Button */}
-          <div className="navbar-mobile-toggle flex items-center">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="navbar-hamburger"
-            >
-              {isMenuOpen ? <CircleChevronUp size={28} /> : <Logs size={28} />}
-            </button>
-          </div>
-
+          <button
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="navbar-mobile-toggle block"
+          >
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* MENÚ MOBILE ANIMADO */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="navbar-mobile-menu block"
+            className="navbar-mobile-menu block absolute mt-3"
           >
-            <div className="navbar-mobile-links flex flex-col gap-5">
-              {navLinks.map(link => (
-                <Link
+            <div className="navbar-mobile-inner flex flex-col gap-2 py-5 px-10">
+              {navLinks.map((link) => (
+                <NavLink
                   key={link.path}
                   to={link.path}
-                  className={`navbar-mobile-link pb-3 ${isActive(link.path) ? 'navbar-mobile-link-active' : ''}`}
                   onClick={() => setIsMenuOpen(false)}
+
+                  className={({ isActive }) =>
+                    `navbar-mobile-link block text-center ${isActive ? 'active' : 'inactive'
+                    }`
+                  }
                 >
                   {link.label}
-                </Link>
+                </NavLink>
               ))}
 
-              <div className="mt-4">
-                <motion.a
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  href={`https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola! Quisiera realizar una consulta general.")}`}
-                  target="_blank" rel="noopener noreferrer"
-                  className="navbar-contact-btn inline-flex items-center justify-center gap-2 w-full py-3.5 text-xl"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <MessageSquare size={18} /> Contactar
-                </motion.a>
-              </div>
-
+              {/* Botón WhatsApp Mobile */}
+              <motion.a
+                whileTap={{ scale: 0.95 }}
+                href={wpUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="navbar-mobile-cta flex items-center justify-center gap-3 px-auto py-3.5 mt-3"
+              >
+                <MessageCircle size={20} />
+                Contactar
+              </motion.a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </header>
   );
 };
 
