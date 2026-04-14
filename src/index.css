@@ -1,45 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Great+Vibes&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
 @import "tailwindcss";
 
 :root {
-  /* Brand Colors */
-  --color-black: #050505;
-  --color-cream: #f1e3dd;
-  --color-gold: rgb(216, 193, 131);
-  --color-gold-dark: rgb(155, 137, 89);
-  --color-taupe: rgb(122, 104, 87);
+  --color-pink-light: #f6e5ec;
+  --color-pink-dark: #d4a2b2;
+
+  --color-beige: #fefaf0;
+  --color-beige-dark: #fff7e6;
+
+  --color-gold: #d4c49d;
+  --color-gold-dark: #b6a27e;
+  --color-gold-deep: #8e7b57;
+  --color-mauve: #8c7f76;
+
+  --color-black: #121212;
+  --color-text-main: #3d2b1f;
+
+  --color-text-soft: #6b5c54;
   --color-white: #ffffff;
-  --color-mint: rgba(208, 237, 235, 1);
-  --color-mint-dark: rgba(165, 216, 212, 1);
-  --color-mint-darker: rgba(122, 186, 182, 1);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(182, 162, 126, 0.2);
 
-  /* Typography */
-  --font-body: 'Montserrat', sans-serif;
-  --font-heading: 'Playfair Display', serif;
-  --font-script: 'Alex Brush';
+  --font-global: 'Montserrat', sans-serif;
+  --font-okinawa: 'Great Vibes', cursive;
+  --font-signet: 'Playfair Display', serif;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html,
 body {
-  overflow-x: hidden;
   margin: 0;
   padding: 0;
-  font-family: var(--font-body);
-  background-color: var(--color-white);
-  color: var(--color-black);
+  font-family: var(--font-global);
+  overflow-x: hidden;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background-color: var(--color-gold);
+  background-color: var(--color-gold-dark);
   color: var(--color-white);
-}
-
-.app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
