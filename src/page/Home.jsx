@@ -1,14 +1,18 @@
 import Hero from '../components/Hero';
 import Info from '../components/Info';
 import Paquetes from '../components/Paquetes';
+import CtaFinal from '../components/CtaFinal';
 
 const Home = () => {
     return (
-        <div>
+        <main className="home-main">
             <Hero />
             <Info />
-            <Paquetes />
-        </div>
+            <div className="home-paquetes-wrapper flex flex-col">
+                <Paquetes />
+            </div>
+            <CtaFinal />
+        </main>
     );
 };
 
