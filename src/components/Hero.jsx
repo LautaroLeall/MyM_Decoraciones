@@ -1,69 +1,88 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { MessageCircle, Gift } from 'lucide-react';
+import { MessageCircle, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Hero.css';
 
-const Hero = ({ navigate }) => {
+const Reveal = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay }}
+  >
+    {children}
+  </motion.div>
+);
+
+const Hero = () => {
+  const navigate = useNavigate();
+  const wpUrl = `https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola! Vengo de la web y quiero consultar por una decoración.")}`;
+
   return (
-    <section className="hero-section relative flex items-center justify-center text-center">
+    <section className="hero-section relative flex items-center justify-center text-center px-5">
+      {/* Background */}
       <motion.div
-        className="hero-bg-container absolute"
+        className="hero-bg-wrapper absolute"
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 2, ease: "easeOut" }}
       >
         <img
-          src="./hero-MyM.png"
-          alt="Decoración Eventos"
+          src="/hero-MyM.png"
+          alt="Decoración Premium"
           className="hero-bg-image"
         />
-        <div className="hero-overlay absolute" />
+        <div className="hero-bg-overlay absolute"></div>
       </motion.div>
 
-      <div className="hero-content relative flex flex-col items-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.7 }}
-          className="hero-title mt-20 mb-5"
-        >
-          Creamos decoraciones únicas para <span className="hero-highlight block mt-2">eventos inolvidables</span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.7 }}
-          className="hero-subtitle mb-10 px-2"
-        >
-          Diseños de autoría, calidad premium y puntualidad asegurada. Relajate, nosotros armamos la magia.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
-          className="hero-buttons flex flex-col items-center justify-center gap-6"
-        >
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href={`https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola! Vengo de la página web y me gustaría consultar por la decoración para mi evento.")}`}
-            target="_blank" rel="noopener noreferrer"
-            className="hero-wp-btn inline-flex items-center gap-2"
-          >
-            <MessageCircle size={22} />
-            Consultar por mi evento
-          </motion.a>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => navigate('paquetes')}
-            className="hero-secondary-btn flex items-center gap-2 px-4 py-2"
-          >
-            <Gift size={22} />
-            Ver paquetes disponibles
-          </motion.button>
-        </motion.div>
-      </div>
+      {/* Content */}
+      <d iv className="hero-content-inner relative mx-auto pt-10">
+        <Reveal>
+          <span className="hero-location-badge inline-flex items-center mb-6 px-5 py-2.5">
+            San Miguel de Tucumán & Yerba Buena
+          </span>
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <h1 className="hero-main-title mb-5">
+            Arquitectura visual
+            <span className="hero-highlight-text block pr-3">
+              para eventos de autor
+            </span>
+          </h1>
+        </Reveal>
+
+        <Reveal delay={0.2}>
+          <p className="hero-subtitle mx-auto mb-15">
+            Estructuras premium, diseño exclusivo y una curaduría impecable para transformar cada espacio en una obra de arte.
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.3}>
+          <div className="hero-actions-group flex flex-col justify-center items-center gap-7">
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href={wpUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-cta-whatsapp inline-flex items-center justify-center gap-2 px-6 py-5"
+            >
+              <MessageCircle size={20} /> Cotizar mi evento
+            </motion.a>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/paquetes')}
+              className="hero-cta-secondary inline-flex items-center justify-center gap-2 px-6 py-5"
+            >
+              Ver propuestas 2026 <ArrowRight size={18} />
+            </motion.button>
+          </div>
+        </Reveal>
+      </d>
     </section>
   );
 };
