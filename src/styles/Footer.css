@@ -1,20 +1,20 @@
 .footer {
-  background-color: rgba(208, 237, 235, 0.2);
+  background-color: var(--color-beige-dark);
   padding: 3rem 0 0;
-  border-top: 1px solid var(--color-taupe);
+  border-top: 1px solid var(--color-pink-dark);
 }
 
 .footer::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 55% 50%, var(--color-mint), transparent 65%);
+  background: radial-gradient(circle at 55% 50%, var(--color-pink-dark), transparent 50%);
   z-index: 5;
   pointer-events: none;
 }
 
 .footer-grid {
-  max-width: 55rem;
+  max-width: 60rem;
   margin: 0 auto;
   padding: 0 auto;
   z-index: 10;
@@ -22,8 +22,7 @@
 }
 
 .footer-section-heading {
-  font-family: var(--font-script);
-  color: var(--color-gold-dark);
+  color: var(--color-gold-deep);
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 700;
@@ -34,17 +33,15 @@
 }
 
 .footer-link {
-  font-family: var(--font-script);
-  color: var(--color-taupe);
+  color: var(--color-text-main);
   text-transform: uppercase;
   font-size: 0.9rem;
-  font-weight: 600;
   position: relative;
   transition: all 0.3s ease;
 }
 
 .footer-link:hover {
-  color: var(--color-gold);
+  font-weight: 600;
   padding-left: 0.5rem;
 }
 
@@ -56,7 +53,7 @@
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
-  border: 1px double var(--color-cream);
+  border: 1px double var(--color-gold-deep);
   transition: all 0.4s ease;
 }
 
@@ -104,7 +101,6 @@
 }
 
 .footer-bottom-copy {
-  font-family: var(--font-script);
   font-size: 0.8rem;
   color: var(--color-gold-dark);
   letter-spacing: 0.5px;
@@ -112,9 +108,8 @@
 
 /* Dev Section Styles */
 .footer-dev {
-  font-family: var(--font-script);
   font-size: 0.85rem;
-  color: var(--color-taupe);
+  color: var(--color-text-main);
   letter-spacing: 0.5px;
 }
 
@@ -123,25 +118,25 @@
 }
 
 .footer-dev-name {
-  color: var(--color-gold-dark);
+  color: var(--color-gold-deep);
   letter-spacing: 0.5px;
   font-weight: 800;
 }
 
 .footer-dev-links {
-  border-left: 1px solid var(--color-gold);
+  border-left: 1px solid var(--color-gold-deep);
   padding-left: 0.75rem;
 }
 
 .footer-dev-links a {
-  color: var(--color-gold-dark);
+  color: var(--color-gold-deep);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
 }
 
 .footer-dev-links a:hover {
-  color: var(--color-taupe);
+  color: var(--color-text-main);
   transform: translateY(-2px);
 }
 
@@ -152,7 +147,7 @@
 
   .footer-grid {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   .footer-logo-link {
