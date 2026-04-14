@@ -1,9 +1,13 @@
+// eslint-disable-next-line no-unused-vars
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Instagram, Github, Linkedin } from 'lucide-react';
 import { FaWhatsapp } from "react-icons/fa";
 import '../styles/Footer.css';
 
 const Footer = () => {
+  const wpUrl = `https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola MyM! ✨ Vengo de la web y quiero consultar por una decoración.")}`;
+
   const dev = {
     name: "Lautaro Leal",
     github: "https://github.com/LautaroLeall",
@@ -38,22 +42,25 @@ const Footer = () => {
 
         <div className="footer-contact-col">
           <div className="footer-social flex gap-6">
-            <a
-              href={`https://wa.me/5493814430041?text=${encodeURIComponent("Hola MyM, visito su web y quiero pedir un presupuesto.")}`}
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href={wpUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="footer-btn footer-whatsapp-btn w-full justify-center p-1"
             >
               <FaWhatsapp size={33} />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
               href="https://www.instagram.com/mymdecoracionparafiestas/"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-btn footer-instagram-btn w-full justify-center p-1"
             >
               <Instagram size={33} />
-            </a>
+            </motion.a>
           </div>
         </div>
       </div>
@@ -76,7 +83,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 };
 
