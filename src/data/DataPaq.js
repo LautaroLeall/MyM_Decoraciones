@@ -1,9 +1,11 @@
 export const PACKAGES = [
   {
     id: 'soft',
-    name: 'Soft Deco',
-    size: '1 Panel (2 mts de frente)',
-    shortDesc: 'Nuestra nueva opción delicada y minimalista, perfecta para festejos reducidos.',
+    name: 'Propuesta Soft Deco',
+    size: '2 mts de frente x 2 mts prof.',
+    shortDesc: 'Opción práctica, estética y versátil para darle un toque de elegancia a tu evento.',
+    price: 237000,
+    sena: 60000,
     images: [
       '/soft/soft-0.png',
       '/soft/soft-1.png',
@@ -13,23 +15,22 @@ export const PACKAGES = [
       '/soft/soft-5.png'
     ],
     features: [
-      'Back Drop 1 panel (diseños elegidos según estilo y temática)',
-      'Alfombra 2 mts (césped artificial o pelo sintético)',
-      'Mesa cilíndrica y 1 mesa secundaria',
-      '1 bandeja de pie y 1 bandeja espejada',
-      '1 cartel de número o frase LED (según disponibilidad)',
+      'Fondo personalizado de 1.5 mts',
+      'Alfombra de 2 mts',
+      'Mesa central y detalles exclusivos',
+      'Globos: Bouquet de 2 mts + 3 burbujas',
+      'Cartelería LED (número o frase)',
       'Iluminación LED (2 reflectores)',
-      '1 estructura LED (si el diseño lo amerita)',
-      'Globos: 1 bouquet grande'
-    ],
-    infantiles: 'Incluye detalle según temática o 1 personaje individual.',
-    eventos: 'Estética delicada y minimalista sin personajes. (No incluye cartel con el nombre).'
+      '1 Plataforma + 1 Personaje temático'
+    ]
   },
   {
     id: 'mini',
-    name: 'Mini Deco',
-    size: '3 mts de largo x 2 mts de frente',
-    shortDesc: 'Ideal para espacios íntimos y celebraciones pequeñas.',
+    name: 'Propuesta Mini Deco',
+    size: '3 mts de frente x 2 mts prof.',
+    shortDesc: 'Opción imponente y versátil que mantiene la estética y los detalles característicos.',
+    price: 365000,
+    sena: 80000,
     images: [
       '/mini/mini-0.png',
       '/mini/mini-1.png',
@@ -39,23 +40,23 @@ export const PACKAGES = [
       '/mini/mini-5.png'
     ],
     features: [
-      'Back Drop 3mts (paneles según estilo y temática)',
-      'Alfombra 3 mts (césped artificial o pelo sintético)',
-      'Mesa central y mesa secundaria',
-      '3 bandejas de pie y 3 bandejas espejadas',
-      '1 cartel de número o frase LED (según disponibilidad)',
-      'Iluminación LED (3 reflectores)',
-      '1 estructura LED (si el diseño lo amerita)',
-      'Globos: 1 bouquet grande, 1 bouquet pequeño'
-    ],
-    infantiles: 'Incluye panel circular con 1 personaje individual.',
-    eventos: 'Estética elegante, moderna o minimalista sin personajes. (No incluye cartel de nombre, es adicional).'
+      'Fondo personalizado de 3 mts',
+      'Alfombra de 3 mts',
+      'Mesa central + 2 Mesas secundarias',
+      '4 bandejas de pie + 4 bandejas espejadas',
+      'Cartel LED + Cartel con Nombre',
+      'Iluminación LED (4 reflectores)',
+      'Globos: Bouquet 2m + 2 bouquets 1m + 4 burbujas',
+      '1 Plataforma + 2 Personajes temáticos'
+    ]
   },
   {
     id: 'express',
-    name: 'Deco Express',
-    size: '5 mts de largo x 2 mts de frente',
-    shortDesc: 'El equilibrio perfecto entre presencia y adaptabilidad para tu salón.',
+    name: 'Propuesta Deco Express',
+    size: '6 mts de frente x 2 mts prof.',
+    shortDesc: 'Alternativa práctica y muy completa, diseñada para destacar el evento.',
+    price: 532000,
+    sena: 150000,
     images: [
       '/express/express-0.png',
       '/express/express-1.png',
@@ -65,23 +66,23 @@ export const PACKAGES = [
       '/express/express-5.png'
     ],
     features: [
-      'Back Drop 5mts (paneles según estilo y temática)',
-      'Alfombra 5 mts (césped artificial o pelo sintético)',
-      'Mesa central (3 cilindros) y 1 mesa secundaria',
-      '2 exhibidores de postres, 4 bandejas de pie, 6 espejadas',
-      '1 cartel de número LED (según disponibilidad)',
-      'Iluminación LED (4 reflectores)',
-      '2 estructuras LED (si el diseño lo amerita)',
-      'Globos: 2 bouquets grandes'
-    ],
-    infantiles: 'Incluye panel circular con 1 o más personajes individuales.',
-    eventos: 'Estética elegante y sofisticada. Incluye Cartel con el Nombre del agasajado.'
+      'Fondo personalizado AR de 6 mts',
+      'Alfombra de 6 mts',
+      'Mesa central + 4 Mesas secundarias',
+      '6 bandejas de pie + 6 bandejas espejadas',
+      'Cartel LED + Cartel con Nombre',
+      'Iluminación LED (6 reflectores)',
+      'Globos: 2 bouquets 2m + 1 bouquet 1m + 6 burbujas',
+      '2 Plataformas + 3 Personajes temáticos'
+    ]
   },
   {
     id: 'premium',
-    name: 'Deco Premium',
-    size: '7 mts de largo x 2 mts de frente',
-    shortDesc: 'Alto impacto visual con una gran cantidad de detalles y volumen.',
+    name: 'Propuesta Deco Premium',
+    size: '8 mts de frente x 2 mts prof.',
+    shortDesc: 'Impacto visual espectacular, con gran amplitud y detalles únicos.',
+    price: 724000,
+    sena: 200000,
     images: [
       '/premium/premium-0.png',
       '/premium/premium-1.png',
@@ -91,42 +92,14 @@ export const PACKAGES = [
       '/premium/premium-5.png'
     ],
     features: [
-      'Back Drop 7mts (paneles según estilo y temática)',
-      'Alfombra 7 mts (césped artificial o pelo sintético)',
-      'Mesa central (4 cilindros) y 2 mesas secundarias',
-      '2 exhibidores de postres, 6 bandejas de pie, 6 espejadas',
-      '1 cartel de número o frase LED (según disponibilidad)',
-      'Iluminación LED (5 reflectores)',
-      '4 estructuras LED (si el diseño lo amerita)',
-      'Globos: 2 bouquets grandes, 1 bouquet mediano'
-    ],
-    infantiles: 'Incluye panel circular con 2 o más personajes individuales.',
-    eventos: 'Gran producción estética sin personajes. Incluye Cartel con el Nombre del agasajado.'
-  },
-  {
-    id: 'gigante',
-    name: 'Deco Gigante',
-    size: '10 mts de largo x 2 mts de frente',
-    shortDesc: 'Nuestra opción más espectacular e imponente. Nivel internacional.',
-    images: [
-      '/gigante/gigante-0.png',
-      '/gigante/gigante-1.png',
-      '/gigante/gigante-2.png',
-      '/gigante/gigante-3.png',
-      '/gigante/gigante-4.png',
-      '/gigante/gigante-5.png'
-    ],
-    features: [
-      'Back Drop 10mts (paneles según estilo y temática)',
-      'Alfombra 10 mts (césped artificial o pelo sintético)',
-      'Mesa central A y B (6 cilindros) y 2 mesas secundarias',
-      '2 exhibidores, 8 bandejas de pie, 8 espejadas',
-      '1 cartel de número LED y 1 cartel de frase LED',
-      'Iluminación LED (7 reflectores)',
-      '6 estructuras LED',
-      'Globos: 2 bouquets grandes, 2 medianos, 2 pequeños'
-    ],
-    infantiles: 'Incluye panel circular con 3 o más personajes individuales.',
-    eventos: 'Producción escenográfica completa y premium. Incluye Cartel con el Nombre del agasajado.'
+      'Fondo personalizado AR de 8 mts',
+      'Alfombra de 8 mts',
+      'Mesa central + 6 Mesas secundarias',
+      '8 bandejas de pie + 8 bandejas espejadas',
+      'Cartel LED + Cartel con Nombre',
+      'Iluminación LED (8 reflectores)',
+      'Globos Enormes: 2 bouquets 2m + 2 bouquets 1.5m + 10 burbujas',
+      '3 Plataformas + 4 Personajes temáticos'
+    ]
   }
 ];
