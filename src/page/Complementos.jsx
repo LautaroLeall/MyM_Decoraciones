@@ -3,7 +3,7 @@ import ContactCom from '../components/ContactCom';
 
 const ComplementosPage = () => {
     return (
-        <div className="py-22">
+        <div className="page-section-wrapper">
             <Complementos />
             <ContactCom />
         </div>
