@@ -1,5 +1,5 @@
 .paquetes-section {
-  background-color: var(--color-beige-dark);
+  background-color: var(--color-beige);
 }
 
 .paquetes-container {
@@ -27,7 +27,7 @@
 
 @media (min-width: 640px) {
   .paquetes-title {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   .paquetes-sub {
