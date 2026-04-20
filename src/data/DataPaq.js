@@ -1,7 +1,7 @@
 export const PACKAGES = [
   {
     id: 'soft',
-    name: 'Propuesta Soft Deco',
+    name: 'Soft Deco',
     size: '2 mts de frente x 2 mts prof.',
     shortDesc: 'Opción práctica, estética y versátil para darle un toque de elegancia a tu evento.',
     price: 237000,
@@ -26,7 +26,7 @@ export const PACKAGES = [
   },
   {
     id: 'mini',
-    name: 'Propuesta Mini Deco',
+    name: 'Mini Deco',
     size: '3 mts de frente x 2 mts prof.',
     shortDesc: 'Opción imponente y versátil que mantiene la estética y los detalles característicos.',
     price: 365000,
@@ -52,9 +52,9 @@ export const PACKAGES = [
   },
   {
     id: 'express',
-    name: 'Propuesta Deco Express',
+    name: 'Deco Express',
     size: '6 mts de frente x 2 mts prof.',
-    shortDesc: 'Alternativa práctica y muy completa, diseñada para destacar el evento.',
+    shortDesc: 'Alternativa práctica y muy completa, con un diseño soñado para destacar tu evento.',
     price: 532000,
     sena: 150000,
     images: [
@@ -78,9 +78,9 @@ export const PACKAGES = [
   },
   {
     id: 'premium',
-    name: 'Propuesta Deco Premium',
+    name: 'Deco Premium',
     size: '8 mts de frente x 2 mts prof.',
-    shortDesc: 'Impacto visual espectacular, con gran amplitud y detalles únicos.',
+    shortDesc: 'Impacto visual espectacular, con gran amplitud y detalles únicos que deslumbran .',
     price: 724000,
     sena: 200000,
     images: [
@@ -98,7 +98,7 @@ export const PACKAGES = [
       '8 bandejas de pie + 8 bandejas espejadas',
       'Cartel LED + Cartel con Nombre',
       'Iluminación LED (8 reflectores)',
-      'Globos Enormes: 2 bouquets 2m + 2 bouquets 1.5m + 10 burbujas',
+      'Globos: 2 bouquets 2m + 2 bouquets 1.5m + 10 burbujas',
       '3 Plataformas + 4 Personajes temáticos'
     ]
   }
