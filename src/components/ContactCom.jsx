@@ -9,26 +9,29 @@ const ContactCom = () => {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      className="contactcom-box relative flex flex-col items-center text-center"
+      viewport={{ once: true }}
+      className="contactcom-box relative flex flex-col text-center items-center justify-center px-8 py-15 mx-5 mt-15 mb-30"
     >
+      <div className="contactcom-glow absolute" />
 
-      <h3 className="contactcom-title mb-5">¿Querés agregar estos detalles a tu fiesta?</h3>
-      <p className="contactcom-desc mb-10">
-        Solicitá los complementos con anticipación para asegurar disponibilidad el día de tu evento.
-        <br />
-        Escribinos y armamos tu presupuesto a medida.
-      </p>
+      <div className="contactcom-inner relative">
+        <h3 className="contactcom-title mb-5">
+          ¿Querés agregar estos detalles a tu fiesta?
+        </h3>
+        <p className="contactcom-desc mb-8">
+          Solicitá los complementos con anticipación para asegurar disponibilidad el día de tu evento.
+          <br />
+          Escribinos y armamos tu presupuesto a medida.
+        </p>
 
-      <motion.a
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        href={`https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola! Quisiera consultar los valores para agregar complementos/extras a mi decoración.")}`}
-        target="_blank" rel="noopener noreferrer"
-        className="contactcom-wp-btn inline-flex items-center justify-center gap-1 p-4"
-      >
-        <MessageSquarePlus size={20} /> Agregar Complemento
-      </motion.a>
-
+        <motion.a
+          href={`https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola! Quisiera consultar los valores para agregar complementos/extras a mi decoración.")}`}
+          target="_blank" rel="noopener noreferrer"
+          className="contactcom-wp-btn inline-flex items-center justify-center gap-5 py-4 px-7"
+        >
+          <MessageSquarePlus size={20} /> Complementos
+        </motion.a>
+      </div>
     </motion.div>
   );
 };
