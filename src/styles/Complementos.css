@@ -1,282 +1,319 @@
-.complementos-section {
-  padding: 3rem 2rem;
-  margin: 0 auto;
-  max-width: 70rem;
+.addons-section {
+  background: var(--color-white);
+  max-width: 65rem;
 }
 
-.complementos-heading {
-  font-family: var(--font-heading);
+.addons-title {
+  font-family: var(--font-signet);
   font-size: 2.5rem;
-  color: var(--color-taupe);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--color-text-main);
+  font-style: italic;
+}
+
+.addons-sub {
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--color-text-soft);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+.addons-highlight {
+  font-weight: 800;
+  color: var(--color-gold-deep);
   text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: 0.85rem;
 }
 
-.complementos-subheading {
-  font-family: var(--font-heading);
-  color: var(--color-gold-dark);
-  font-size: 1.1rem;
-  max-width: 45rem;
-  margin: 0 auto;
-  line-height: 1.6;
-  text-transform: uppercase;
-}
-
-.category-title {
-  font-family: var(--font-script);
-  color: var(--color-taupe);
-  font-size: 1.45rem;
-  border-bottom: 5px double rgba(216, 193, 132, 0.4);
-}
-
-.category-icon {
-  color: var(--color-taupe);
-}
-
-.complementos-grid {
-  grid-template-columns: 1fr;
+.addons-highlight::after {
+  content: "";
+  display: block;
+  width: 10rem;
+  height: 0.1rem;
+  background: var(--color-gold-deep);
+  margin: 0.75rem auto 0;
+  opacity: 0.3;
 }
 
 @media (min-width: 640px) {
-  .complementos-grid {
+  .addons-title {
+    font-size: 4rem;
+  }
+
+  .addons-sub {
+    font-size: 0.95rem;
+  }
+
+  .addons-highlight {
+    font-size: 1rem;
+  }
+}
+
+.addons-category-icon {
+  color: var(--color-gold-deep);
+  flex-shrink: 0;
+}
+
+.addons-category-title {
+  color: var(--color-text-main);
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+}
+
+@media (min-width: 640px) {
+  .addons-category-title {
+    font-size: 1.5rem;
+  }
+}
+
+.addons-category-line {
+  flex-grow: 1;
+  height: 0.11rem;
+  background: linear-gradient(90deg, var(--color-gold-deep), transparent);
+}
+
+.addons-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .addons-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
-  .complementos-grid {
+  .addons-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* CARDS */
-.complemento-card {
-  background-color: var(--color-white);
-  border: 1px solid rgba(165, 216, 212, 0.9);
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(5, 5, 5, 0.3);
+.addon-card {
+  border: 1px solid var(--color-pink-dark);
+  background: var(--color-beige-dark);
+  border-radius: 2.5rem;
+  transition: all 0.5s ease;
   overflow: hidden;
 }
 
-.complemento-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background-color: var(--color-mint);
-  transition: width 0.3s ease;
+.addon-card:hover {
+  background: var(--color-gold);
+  border-color: var(--color-text-main);
 }
 
-.complemento-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(165, 216, 212, 0.8);
-  border-color: var(--color-mint-dark);
+.addon-icon-box {
+  width: 4rem;
+  height: 4rem;
+  background: var(--color-pink-dark);
+  color: var(--color-pink-light);
+  border-radius: 50%;
+  transition: all 0.5s ease;
 }
 
-.complemento-card:hover::before {
-  width: 8px;
+.addon-card:hover .addon-icon-box {
+  transform: scale(1.1) rotate(10deg);
+  background: var(--color-gold-deep);
+  color: var(--color-text-main);
 }
 
-.complemento-name {
-  font-family: var(--font-script);
-  font-size: 1.2rem;
-  color: var(--color-taupe);
-}
-
-.complemento-price-badge {
-  font-family: var(--font-script);
-  color: var(--color-taupe);
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.9rem;
-  background-color: rgba(216, 193, 132, 0.3);
-  border: 1px solid rgba(216, 193, 132, 0.5);
-}
-
-.complemento-action-btn {
-  width: auto;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  color: var(--color-mint-dark);
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  padding: 0 0.5rem;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.complemento-card:hover .complemento-action-btn {
-  color: var(--color-gold-dark);
-}
-
-/* CONDICIONES BOX */
-.condiciones-box {
-  background-color: var(--color-cream);
-  border: 1px solid rgba(216, 193, 132, 0.4);
-  max-width: 65rem;
-  margin: 1rem auto;
-  margin-top: 6rem;
-}
-
-.condiciones-icon {
-  color: var(--color-taupe);
-}
-
-.condiciones-title {
-  font-family: var(--font-heading);
+.addon-name {
+  font-family: var(--font-signet);
   font-size: 1.4rem;
-  color: var(--color-taupe);
-  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-text-main);
+  font-style: italic;
 }
 
-.condiciones-list {
-  list-style: none;
+.addon-price {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  letter-spacing: -0.02em;
+}
+
+.addon-unit {
+  font-size: 0.55rem;
+  color: var(--color-text-soft);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  opacity: 0.7;
+}
+
+.addon-card-cta {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--color-pink-dark);
+  color: var(--color-text-main);
+  font-weight: 800;
+  border-radius: 100px;
+  transition: all 0.4s ease;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+}
+
+.addon-card:hover .addon-card-cta {
+  background: var(--color-text-main);
+  color: var(--color-beige);
+  border-color: var(--color-gold);
+}
+
+/* Protocol Banner */
+.addons-protocol-banner {
+  background: var(--color-beige);
+  border-radius: 3rem;
+  border: 1px solid var(--color-gold);
+}
+
+@media (min-width: 1024px) {
+  .addons-protocol-banner {
+    padding: 3.5rem;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.addons-protocol-icon {
+  width: 6rem;
+  height: 6rem;
+  background: var(--color-white);
+  border-radius: 2rem;
+  color: var(--color-gold-deep);
+  flex-shrink: 0;
+  border: 1px solid var(--color-gold);
+}
+
+.addons-protocol-title {
+  font-family: var(--font-signet);
+  color: var(--color-text-main);
+  font-size: 2rem;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.addons-protocol-list {
   grid-template-columns: 1fr;
 }
 
 @media (min-width: 768px) {
-  .condiciones-list {
+  .addons-protocol-list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.condicion-item {
-  font-family: var(--font-heading);
-  color: var(--color-taupe);
-  line-height: 1.5;
-  font-size: 1.3rem;
+.addons-protocol-bullet {
+  width: 7px;
+  height: 7px;
+  background: var(--color-gold);
+  border-radius: 100%;
+  flex-shrink: 0;
 }
 
-.condicion-item::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  top: -2px;
-  font-size: 1.4rem;
-  color: var(--color-gold-dark);
+.addons-protocol-text {
+  color: var(--color-text-soft);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
-/* MODAL STYLES */
-.modal-overlay {
+/* Modal */
+.addon-modal-overlay {
   inset: 0;
-  background-color: rgba(5, 5, 5, 0.6);
-  backdrop-filter: blur(8px);
-  z-index: 9999;
+  z-index: 200;
 }
 
-.modal-content {
-  background-color: var(--color-white);
-  border-radius: 1.5rem;
-  padding: 3.5rem 2rem 2.5rem;
-  max-width: 35rem;
+.addon-modal-bg {
+  inset: 0;
+  background: var(--glass-bg);
+  backdrop-filter: blur(5px);
+}
+
+.addon-modal-content {
+  background: var(--color-beige-dark);
+  border: 1px solid var(--color-gold);
+  border-radius: 3rem;
   width: 100%;
-  box-shadow: 0 20px 40px -10px rgba(165, 216, 212);
-  border: 1px solid rgba(165, 216, 212);
+  max-width: 32rem;
+  overflow: hidden;
 }
 
-.modal-close-btn {
+.addon-modal-close {
   top: 1.5rem;
   right: 1.5rem;
-  background: transparent;
-  border: none;
-  color: var(--color-taupe);
+  width: 3rem;
+  height: 3rem;
+  background: var(--color-beige);
+  color: var(--color-text-main);
+  border-radius: 50%;
   cursor: pointer;
+  z-index: 10;
   transition: all 0.3s ease;
-  border-radius: 50%;
 }
 
-.modal-close-btn:hover {
-  background-color: var(--color-cream);
-  color: var(--color-black);
-  transform: rotate(90deg);
+.addon-modal-close:hover {
+  background: var(--color-text-main);
+  color: var(--color-beige);
 }
 
-.modal-header-icon {
-  width: 5rem;
-  height: 5rem;
-  margin: 0 auto 1.5rem;
-  background-color: var(--color-mint);
-  color: var(--color-mint-dark);
-  border-radius: 50%;
+.addon-modal-image-placeholder {
+  width: 100%;
+  height: 14rem;
+  background: var(--color-beige);
+  color: var(--color-gold-deep);
+  border-bottom: 1px solid var(--color-gold);
 }
 
-.modal-title {
-  font-family: var(--font-heading);
-  color: var(--color-taupe);
-  letter-spacing: 3px;
+.addon-modal-title {
+  font-family: var(--font-signet);
+  color: var(--color-text-main);
+  font-size: 2rem;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.addon-modal-unit {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--color-gold-deep);
   text-transform: uppercase;
-  font-size: 1.8rem;
-  line-height: 1.2;
+  letter-spacing: 0.3em;
 }
 
-.modal-price {
-  font-family: var(--font-heading);
-  color: var(--color-taupe);
-  background-color: var(--color-cream);
-  font-size: 1.3rem;
-  border-radius: 9999px;
-  padding: 0.5rem 1rem;
-}
-
-.modal-desc {
-  font-family: var(--font-heading);
-  color: var(--color-gold-dark);
+.addon-modal-desc {
+  color: var(--color-text-soft);
+  font-family: var(--font-global);
   font-size: 0.95rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  line-height: 1.6;
+  font-weight: 500;
+  line-height: 1.7;
 }
 
-.modal-wp-btn {
-  background-color: var(--color-mint-darker);
+.addon-modal-price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  letter-spacing: -0.02em;
+}
+
+.addon-modal-whatsapp {
+  background: var(--color-text-main);
   color: var(--color-white);
-  border: 5px double var(--color-mint);
-  font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 800;
+  width: auto;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  transition: all 0.4s ease;
+  text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-radius: 9999px;
-  transition: all 0.3s ease;
+  letter-spacing: 0.15em;
 }
 
-.modal-wp-btn:hover {
-  background-color: var(--color-white);
-  color: var(--color-mint-darker);
-  border-color: var(--color-mint-darker);
-}
-
-@media (max-width: 768px) {
-  .complemento-name {
-    font-size: 1rem;
-  }
-
-  .complemento-price-badge {
-    font-size: 0.8rem;
-  }
-
-  .complemento-action-btn {
-    font-size: 0.8rem;
-  }
-
-  .modal-title {
-    font-size: 1.2rem;
-  }
-
-  .modal-wp-btn {
-    padding: 0.8rem 1rem;
-    font-size: 0.8rem;
-  }
-
-  .modal-desc {
-    font-size: 0.8rem;
-  }
-
-  .modal-price {
-    font-size: 1rem;
-  }
+.addon-modal-whatsapp:hover {
+  background: var(--color-gold-deep);
 }
