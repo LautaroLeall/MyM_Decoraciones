@@ -93,6 +93,4 @@ export const COMPLEMENTOS_DATA = [
 export const CONDICIONES_EXTRAS = [
   "Solo se pueden alquilar si se contrata previamente alguna de las 4 propuestas principales.",
   "Se reservan con una seña inicial del 50% del valor del extra.",
-  "Todo el mobiliario y decoración es en calidad de alquiler (uso durante el evento).",
-  "El diseño de los extras se integra armoniosamente a la temática elegida."
 ];
