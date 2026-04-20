@@ -2,120 +2,166 @@ import { useState } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import { COMPLEMENTOS_DATA, CONDICIONES_EXTRAS } from '../data/DataCom';
-import {
-  PlusCircle,
-  Sparkles,
-  X,
-  AlertTriangle,
-  MessageSquarePlus
-} from 'lucide-react';
+import { Sparkles, ChevronRight, X, MessageCircle, Gem, Plus } from 'lucide-react';
 import '../styles/Complementos.css';
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+};
+
+const formatCurrency = (val) => new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 }).format(val);
+
+const ExtraModal = ({ extra, onClose }) => {
+  if (!extra) return null;
+  const wpText = `¡Hola MyM! ✨ Quisiera consultar por el adicional: *${extra.name}* (${extra.unit}).`;
+
+  return (
+    <div className="addon-modal-overlay fixed flex items-center justify-center p-6">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="addon-modal-bg fixed"
+        onClick={onClose}
+      />
+
+      <motion.div
+        initial={{ scale: 0.9, y: 20, opacity: 0 }}
+        animate={{ scale: 1, y: 0, opacity: 1 }}
+        exit={{ scale: 0.9, y: 20, opacity: 0 }}
+        className="addon-modal-content relative"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button onClick={onClose} className="addon-modal-close absolute flex justify-center items-center">
+          <X size={24} />
+        </button>
+
+        <div className="addon-modal-image-placeholder flex flex-col justify-center items-center text-center p-8">
+          <Gem size={56} strokeWidth={1} />
+        </div>
+
+        <div className="addon-modal-body text-center p-8">
+          <h3 className="addon-modal-title mb-2">{extra.name}</h3>
+          <span className="addon-modal-unit block mb-6">{extra.unit}</span>
+          <p className="addon-modal-desc mb-6">{extra.desc}</p>
+          <p className="addon-modal-price mb-6">{formatCurrency(extra.price)}</p>
+
+          <motion.a
+            whileTap={{ scale: 0.98 }}
+            href={`https://wa.me/5493814430041?text=${encodeURIComponent(wpText)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="addon-modal-whatsapp flex items-center justify-center gap-4 p-4 mx-10"
+          >
+            <MessageCircle size={20} /> Consultar
+          </motion.a>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
 
 const Complementos = () => {
   const [selectedExtra, setSelectedExtra] = useState(null);
 
-  const closeModal = () => setSelectedExtra(null);
-
   return (
-    <section className="complementos-section">
-      <div className="complementos-header text-center mb-15">
-        <h2 className="complementos-heading mb-3">Complementos de Alta Gama</h2>
-        <p className="complementos-subheading">
-          Personalizá tu evento llevando la ambientación al siguiente nivel con nuestras opciones adicionales exclusivas.
+    <section className="addons-section pt-35 pb-10 mx-auto px-5">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+        className="addons-header text-center mb-12"
+      >
+        <h1 className="addons-title mb-4">
+          Adicionales Premium
+        </h1>
+        <p className="addons-sub">
+          Detalles exclusivos para elevar la experiencia visual de tu evento.
+          <span className="addons-highlight relative block mt-4">
+            Disponibles al contratar una propuesta base.
+          </span>
         </p>
-      </div>
+      </motion.div>
 
-      <div className="complementos-catalog flex flex-col gap-10 mb-5">
-        {COMPLEMENTOS_DATA.map((cat, idx) => (
-          <div key={idx} className="complementos-category">
-            <h3 className="category-title flex items-center gap-2 pb-1 mb-6">
-              <Sparkles size={20} className="category-icon" />
-              {cat.category}
-            </h3>
+      {COMPLEMENTOS_DATA.map((category, catIdx) => (
+        <div key={catIdx} className="addons-category-section mb-15">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="addons-category-header flex items-center gap-5 mb-8"
+          >
+            <Sparkles size={24} className="addons-category-icon" />
+            <h2 className="addons-category-title">{category.category}</h2>
+            <div className="addons-category-line"></div>
+          </motion.div>
 
-            <div className="complementos-grid grid gap-8">
-              {cat.items.map((item, itemIdx) => (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ delay: itemIdx * 0.05 }}
-                  className="complemento-card relative flex flex-col justify-between gap-5 p-5"
-                  onClick={() => setSelectedExtra(item)}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="addons-grid grid gap-8"
+          >
+            {category.items.map((extra) => (
+              <motion.div
+                key={extra.id}
+                variants={fadeUp}
+                className="addon-card relative flex flex-col items-center text-center py-8 px-10"
+              >
+                <div className="addon-icon-box flex items-center justify-center mb-5">
+                  <Plus size={28} strokeWidth={1.5} />
+                </div>
+                <h3 className="addon-name mb-4">{extra.name}</h3>
+                <span className="addon-price mb-2">{formatCurrency(extra.price)}</span>
+                <span className="addon-unit mb-6">{extra.unit}</span>
+
+                <button
+                  onClick={() => setSelectedExtra(extra)}
+                  className="addon-card-cta flex items-center justify-center gap-2 p-4"
                 >
-                  <div className="complemento-card-content">
-                    <h4 className="complemento-name mb-2 pl-2">{item.name}</h4>
-                    <p className="complemento-price-badge inline-block ml-2">{item.price}</p>
-                  </div>
-                  <button className="complemento-action-btn flex items-center justify-between">
-                    Ver detalles <PlusCircle size={16} />
-                  </button>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="condiciones-box p-10">
-        <div className="condiciones-header flex items-center gap-3 mb-6">
-          <AlertTriangle size={22} className="condiciones-icon" />
-          <h4 className="condiciones-title">Condiciones Importantes de Contratación</h4>
+                  Ver Detalle <ChevronRight size={14} />
+                </button>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-        <ul className="condiciones-list grid gap-8 p-0 m-0">
-          {CONDICIONES_EXTRAS.map((condicion, i) => (
-            <li key={i} className="condicion-item relative pl-4">{condicion}</li>
-          ))}
-        </ul>
-      </div>
+      ))}
+
+      {/* Conditions Section */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+        className="addons-protocol-banner flex flex-col gap-8 p-12"
+      >
+        <div className="addons-protocol-icon flex justify-center items-center">
+          <Gem size={48} strokeWidth={1} />
+        </div>
+        <div>
+          <h3 className="addons-protocol-title mb-8">Protocolos de Alquiler</h3>
+          <ul className="addons-protocol-list grid gap-8">
+            {CONDICIONES_EXTRAS.map((cond, i) => (
+              <li key={i} className="addons-protocol-item flex items-start gap-3">
+                <div className="addons-protocol-bullet mt-2"></div>
+                <p className="addons-protocol-text">{cond}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </motion.div>
 
       <AnimatePresence>
-        {selectedExtra && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={closeModal}
-            className="modal-overlay fixed flex items-center justify-center p-5"
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: -10 }}
-              onClick={(e) => e.stopPropagation()}
-              className="modal-content relative text-center"
-            >
-              <button className="modal-close-btn absolute flex items-center justify-center p-3" onClick={closeModal}>
-                <X size={24} />
-              </button>
-
-              <div className="modal-header-icon flex items-center justify-center">
-                <Sparkles size={32} />
-              </div>
-
-              <h3 className="modal-title mb-4">{selectedExtra.name}</h3>
-              <p className="modal-price inline-block mb-6">{selectedExtra.price}</p>
-
-              <div className="modal-desc-box mb-8">
-                <p className="modal-desc">{selectedExtra.desc}</p>
-              </div>
-
-              <div className="modal-action flex justify-center">
-                <motion.a
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={`https://wa.me/5493814430041?text=${encodeURIComponent(`¡Hola MyM! Quiero consultar sobre el complemento extra: *${selectedExtra.name}* (${selectedExtra.price}).`)}`}
-                  target="_blank" rel="noopener noreferrer"
-                  className="modal-wp-btn inline-flex items-center justify-center gap-3 p-5"
-                >
-                  <MessageSquarePlus size={20} /> Agregar Complemento
-                </motion.a>
-              </div>
-
-            </motion.div>
-          </motion.div>
-        )}
+        {selectedExtra && <ExtraModal extra={selectedExtra} onClose={() => setSelectedExtra(null)} />}
       </AnimatePresence>
     </section>
   );
