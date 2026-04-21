@@ -80,12 +80,12 @@ const Complementos = () => {
         className="addons-header text-center mb-12"
       >
         <h1 className="addons-title mb-4">
-          Adicionales Premium
+          Complementos
         </h1>
         <p className="addons-sub">
-          Detalles exclusivos para elevar la experiencia visual de tu evento.
+          Hacen que tu evento sea unico y personalizado.
           <span className="addons-highlight relative block mt-4">
-            Disponibles al contratar una propuesta base.
+            Disponibles al contratar una propuestas DECO.
           </span>
         </p>
       </motion.div>
