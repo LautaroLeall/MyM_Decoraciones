@@ -46,16 +46,16 @@ const Hero = () => {
 
         <Reveal delay={0.1}>
           <h1 className="hero-main-title mb-5">
-            Arquitectura visual
+            Diseño exclusivo
             <span className="hero-highlight-text block pr-3">
-              para eventos de autor
+              para eventos únicos
             </span>
           </h1>
         </Reveal>
 
         <Reveal delay={0.2}>
           <p className="hero-subtitle mx-auto mb-15">
-            Estructuras premium, diseño exclusivo y una curaduría impecable para transformar cada espacio en una obra de arte.
+            Conceptos personalizados, creatividad aplicada y una dedicación total para transformar cada espacio en un momento inolvidable.
           </p>
         </Reveal>
 
