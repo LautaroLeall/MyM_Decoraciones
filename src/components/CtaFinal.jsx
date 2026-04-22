@@ -42,7 +42,7 @@ const CtaFinal = () => {
 
           <div className="cta-final-footer flex items-center justify-center gap-4 mt-8">
             <Sparkles size={16} />
-            <span className="cta-final-tagline">Luxury Standard 2026</span>
+            <span className="cta-final-tagline">MYM DECORACION 2026</span>
           </div>
         </div>
       </Reveal>
