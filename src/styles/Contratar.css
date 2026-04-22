@@ -90,28 +90,3 @@
   text-transform: uppercase;
   letter-spacing: 0.25em;
 }
-
-.booking-cta-btn {
-  background-color: #25D366;
-  color: var(--color-white);
-  font-weight: 800;
-  border-radius: 100px;
-  font-size: 13px;
-  transition: all 0.4s ease;
-  width: 100%;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-}
-
-@media (min-width: 640px) {
-  .booking-cta-btn {
-    width: auto;
-  }
-}
-
-.booking-cta-btn:hover {
-  box-shadow: 0 20px 40px rgba(37, 211, 102, 0.4);
-  transform: translateY(-5px);
-  background-color: #22c35e;
-}

@@ -1,8 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import {
-  MessageCircle, Calendar, CreditCard, Sparkles, MapPin,
-  Clock, ClipboardCheck, CheckCircle2
+  CreditCard,
+  Sparkles,
+  Clock,
+  ClipboardCheck,
+  CheckCircle2,
+  PartyPopper
 } from 'lucide-react';
 import '../styles/Contratar.css';
 
@@ -39,16 +43,19 @@ const Contratar = () => {
       desc: "Una vez recibida la seña, MyM reserva formalmente el cupo para tu celebración."
     },
     {
+      icon: <PartyPopper />,
+      title: "5. Disfrutar",
+      desc: "Ahora relajate y dejalo en nuestras manos"
+    },
+    {
       icon: <CheckCircle2 />,
-      title: "5. Cancelación",
+      title: "6. Cancelación",
       desc: "El saldo restante se abona el mismo día del evento tras finalizar el armado."
     }
   ];
 
-  const wpUrl = `https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola MyM! ✨ Quiero consultar disponibilidad para reservar una fecha y conocer más sobre el proceso.")}`;
-
   return (
-    <section className="booking-section pt-35 pb-10 mx-auto px-5">
+    <section className="booking-section pt-35 pb-5 mx-auto px-5">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -82,25 +89,6 @@ const Contratar = () => {
             </div>
           </motion.div>
         ))}
-      </motion.div>
-
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeUp}
-        className="booking-cta-box text-center"
-      >
-        <motion.a
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          href={wpUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="booking-cta-btn inline-flex items-center justify-center gap-4 p-4 mx-10"
-        >
-          <MessageCircle size={24} /> Iniciar Reserva
-        </motion.a>
       </motion.div>
     </section>
   );
