@@ -36,8 +36,8 @@ const Hero = () => {
         <div className="hero-bg-overlay absolute"></div>
       </motion.div>
 
-      {/* Content */}
-      <d iv className="hero-content-inner relative mx-auto pt-10">
+      {/* Content */} 
+      <div className="hero-content-inner relative mx-auto pt-10">
         <Reveal>
           <span className="hero-location-badge inline-flex items-center mb-6 px-5 py-2.5">
             San Miguel de Tucumán & Yerba Buena
@@ -82,7 +82,7 @@ const Hero = () => {
             </motion.button>
           </div>
         </Reveal>
-      </d>
+      </div>
     </section>
   );
 };
