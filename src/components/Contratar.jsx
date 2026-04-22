@@ -1,88 +1,108 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import {
+  MessageCircle, Calendar, CreditCard, Sparkles, MapPin,
+  Clock, ClipboardCheck, CheckCircle2
+} from 'lucide-react';
 import '../styles/Contratar.css';
 
-const steps = [
-  {
-    title: 'Elegí y Cotizá',
-    desc: 'Contanos tus ideas por WhatsApp, indicá el tamaño de deco que querés y te pasamos el presupuesto.'
-  },
-  {
-    title: 'Aboná la Seña',
-    desc: 'Congelá tu fecha transfiriendo el monto de la seña pactada correspondiente a tu paquete.'
-  },
-  {
-    title: 'Pagá en Cuotas',
-    desc: 'Aboná el resto en cuotas sin interés hasta el mismo día del evento (antes que inicie).'
-  }
-];
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+};
 
-const conditions = [
-  {
-    title: 'Alquiler de Materiales',
-    desc: 'Todos los elementos, incluyendo los globos, son puestos en concepto de alquiler. Usamos materiales importados y técnicas de reutilización. No se pueden llevar al finalizar.'
-  },
-  {
-    title: 'Daños y Cuidados',
-    desc: 'Cualquier rotura de materiales o daño severo a la alfombra (manchas de comida, barro) será cobrado al finalizar. Confiamos en el buen uso del espacio de exposición.'
-  },
-  {
-    title: 'Reprogramación',
-    desc: 'Cambios de fecha requieren 20 días de anticipación. Reprogramaciones pueden sufrir ajustes de precio. Si se cancela, no hay devolución de seña.'
-  },
-  {
-    title: 'Traslado y Flete',
-    desc: 'El costo de flete no está incluido en los paquetes base. Se cotiza al contratar y se ajusta 10 días antes del evento basado en distancia y horario.'
-  }
-];
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+};
 
 const Contratar = () => {
+  const steps = [
+    {
+      icon: <ClipboardCheck />,
+      title: "1. Propuesta",
+      desc: "Contactanos y elegí tu propuesta ideal según el espacio y la logística del lugar."
+    },
+    {
+      icon: <Clock />,
+      title: "2. Disponibilidad",
+      desc: "Consultamos la disponibilidad de la fecha para asegurarnos de brindarte la mejor atención."
+    },
+    {
+      icon: <CreditCard />,
+      title: "3. Reserva",
+      desc: "Congelamos tu fecha y el valor de la propuesta mediante el pago de la seña (Transferencia)."
+    },
+    {
+      icon: <Sparkles />,
+      title: "4. Confirmación",
+      desc: "Una vez recibida la seña, MyM reserva formalmente el cupo para tu celebración."
+    },
+    {
+      icon: <CheckCircle2 />,
+      title: "5. Cancelación",
+      desc: "El saldo restante se abona el mismo día del evento tras finalizar el armado."
+    }
+  ];
+
+  const wpUrl = `https://wa.me/5493814430041?text=${encodeURIComponent("¡Hola MyM! ✨ Quiero consultar disponibilidad para reservar una fecha y conocer más sobre el proceso.")}`;
+
   return (
-    <div className="contratar-wrapper flex flex-col gap-12">
+    <section className="booking-section pt-35 pb-10 mx-auto px-5">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+        className="booking-header text-center mb-12"
+      >
+        <h1 className="booking-title mb-4">
+          Tu Evento Paso a Paso
+        </h1>
+        <p className="booking-sub">
+          Planificación organizada para que solo te preocupes por disfrutar.
+        </p>
+      </motion.div>
 
-      {/* Pasos */}
-      <section>
-        <h2 className="contratar-section-title flex items-center gap-4 mb-8">
-          <span className="contratar-step-badge flex items-center justify-center">
-            1
-          </span> Pasos simples para reservar
-        </h2>
-
-        <div className="contratar-steps-grid grid gap-8">
-          {steps.map((step, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className="contratar-step-card relative"
-            >
-              <h3 className="contratar-step-name mb-2">{step.title}</h3>
-              <p className="contratar-step-desc">{step.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-
-      </section>
-
-      {/* Condiciones Generales */}
-      <section>
-        <h2 className="contratar-section-title contratar-conditions-title relative inline-block mb-5">
-          Condiciones Generales
-        </h2>
-
-        <div className="contratar-conditions-grid grid gap-8 mt-5">
-          {conditions.map((cond, i) => (
-            <div key={i} className="contratar-condition-card p-8">
-              <h3 className="contratar-condition-name mb-2">{cond.title}</h3>
-              <p className="contratar-condition-desc">{cond.desc}</p>
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="booking-grid grid gap-8 mb-15"
+      >
+        {steps.map((step, idx) => (
+          <motion.div key={idx} variants={fadeUp} className="booking-step-card relative flex flex-col items-center text-center py-8 px-5">
+            <div className="booking-step-num-box flex items-center justify-center mb-4">
+              <div className="booking-step-icon">{step.icon}</div>
             </div>
-          ))}
-        </div>
+            <div className="booking-step-content">
+              <h3 className="booking-step-title mb-3">{step.title}</h3>
+              <p className="booking-step-desc">{step.desc}</p>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
 
-      </section>
-
-    </div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+        className="booking-cta-box text-center"
+      >
+        <motion.a
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          href={wpUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="booking-cta-btn inline-flex items-center justify-center gap-4 p-4 mx-10"
+        >
+          <MessageCircle size={24} /> Iniciar Reserva
+        </motion.a>
+      </motion.div>
+    </section>
   );
 };
 
