@@ -41,7 +41,7 @@ const ExtraModal = ({ extra, onClose }) => {
   };
 
   return (
-    <div className="addon-modal-overlay fixed flex items-center justify-center p-6">
+    <div className="addon-modal-overlay fixed flex items-center justify-center p-5">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -105,18 +105,18 @@ const ExtraModal = ({ extra, onClose }) => {
           )}
         </div>
 
-        <div className="addon-modal-body text-center p-8">
-          <h3 className="addon-modal-title mb-2">{extra.name}</h3>
-          <span className="addon-modal-unit block mb-6">{extra.unit}</span>
-          <p className="addon-modal-desc mb-6">{extra.desc}</p>
-          <p className="addon-modal-price mb-6">{formatCurrency(extra.price)}</p>
+        <div className="addon-modal-body text-center p-6">
+          <h3 className="addon-modal-title mb-1">{extra.name}</h3>
+          <span className="addon-modal-unit block mb-4">{extra.unit}</span>
+          <p className="addon-modal-desc mb-4">{extra.desc}</p>
+          <p className="addon-modal-price mb-4">{formatCurrency(extra.price)}</p>
 
           <motion.a
             whileTap={{ scale: 0.98 }}
             href={`https://wa.me/5493814430041?text=${encodeURIComponent(wpText)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="addon-modal-whatsapp flex items-center justify-center gap-4 p-4 mx-10"
+            className="addon-modal-whatsapp flex items-center justify-center gap-4 p-4 mx-12"
           >
             <MessageCircle size={20} /> Consultar
           </motion.a>
