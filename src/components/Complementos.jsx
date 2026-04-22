@@ -2,7 +2,7 @@ import { useState } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import { COMPLEMENTOS_DATA, CONDICIONES_EXTRAS } from '../data/DataCom';
-import { Sparkles, ChevronRight, X, MessageCircle, Gem, Plus } from 'lucide-react';
+import { Sparkles, ChevronRight, ChevronLeft, X, MessageCircle, Gem, Plus } from 'lucide-react';
 import '../styles/Complementos.css';
 
 const fadeUp = {
@@ -18,8 +18,27 @@ const staggerContainer = {
 const formatCurrency = (val) => new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 }).format(val);
 
 const ExtraModal = ({ extra, onClose }) => {
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+
   if (!extra) return null;
   const wpText = `¡Hola MyM! ✨ Quisiera consultar por el adicional: *${extra.name}* (${extra.unit}).`;
+
+  let imagesList = [];
+  if (Array.isArray(extra.image)) {
+    imagesList = extra.image.filter(img => img && typeof img === 'string' && img.trim() !== '');
+  } else if (typeof extra.image === 'string' && extra.image.trim() !== '') {
+    imagesList = [extra.image];
+  }
+
+  const nextImg = (e) => {
+    e.stopPropagation();
+    setCurrentImgIndex((prev) => (prev + 1) % imagesList.length);
+  };
+
+  const prevImg = (e) => {
+    e.stopPropagation();
+    setCurrentImgIndex((prev) => (prev - 1 + imagesList.length) % imagesList.length);
+  };
 
   return (
     <div className="addon-modal-overlay fixed flex items-center justify-center p-6">
@@ -42,8 +61,48 @@ const ExtraModal = ({ extra, onClose }) => {
           <X size={24} />
         </button>
 
-        <div className="addon-modal-image-placeholder flex flex-col justify-center items-center text-center p-8">
-          <Gem size={56} strokeWidth={1} />
+        <div className="addon-modal-image-placeholder relative flex flex-col justify-center items-center text-center">
+          {imagesList.length > 0 ? (
+            <>
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={currentImgIndex}
+                  src={imagesList[currentImgIndex]}
+                  alt={`${extra.name} - Imagen ${currentImgIndex + 1}`}
+                  className="addon-modal-image absolute p-1"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </AnimatePresence>
+
+              {imagesList.length > 1 && (
+                <>
+                  <button onClick={prevImg} className="addon-carousel-btn addon-carousel-prev absolute flex justify-center items-center">
+                    <ChevronLeft size={20} />
+                  </button>
+                  <button onClick={nextImg} className="addon-carousel-btn addon-carousel-next absolute flex justify-center items-center">
+                    <ChevronRight size={20} />
+                  </button>
+                  <div className="addon-carousel-dots absolute flex justify-center gap-3">
+                    {imagesList.map((_, idx) => (
+                      <button
+                        key={idx}
+                        className={`addon-carousel-dot p-0 ${idx === currentImgIndex ? 'active' : ''}`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setCurrentImgIndex(idx);
+                        }}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
+          ) : (
+            <Gem size={56} strokeWidth={1} />
+          )}
         </div>
 
         <div className="addon-modal-body text-center p-8">
