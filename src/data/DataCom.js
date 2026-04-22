@@ -8,7 +8,9 @@ export const COMPLEMENTOS_DATA = [
         price: 524000,
         unit: "Portal 3.5m + Paneles",
         desc: "Incluye portal temático de 3,5 x 2,30 mts y 2 paneles laterales de 90 x 183 cm.",
-        image: '',
+        image: [
+          '/complementos/entrada-premium-0.png'
+        ],
         sena: 250000
       },
       {
@@ -17,7 +19,9 @@ export const COMPLEMENTOS_DATA = [
         price: 236000,
         unit: "Panel 2m + Detalles",
         desc: "Panel y cartel personalizado, alfombra 1.5m, bouquets y personaje de 60cm.",
-        image: '',
+        image: [
+          ''
+        ],
         sena: 115000
       }
     ]
@@ -31,7 +35,10 @@ export const COMPLEMENTOS_DATA = [
         price: 125000,
         unit: "por unidad",
         desc: "Panel shimmer, alfombra, bouquet de globos de 2 mts y cartel LED.",
-        image: ''
+        image: [
+          '/complementos/exhibidor-candy-0.png',
+          '/complementos/exhibidor-candy-1.png',
+        ]
       },
       {
         id: "ext4",
@@ -39,7 +46,10 @@ export const COMPLEMENTOS_DATA = [
         price: 45000,
         unit: "por unidad",
         desc: "Soporte iluminado ploteado con la temática elegida.",
-        image: ''
+        image: [
+          '/complementos/estante-led-diseño-0.png',
+          '/complementos/estante-led-diseño-1.png',
+        ]
       },
       {
         id: "ext5",
@@ -47,7 +57,10 @@ export const COMPLEMENTOS_DATA = [
         price: 25000,
         unit: "por unidad",
         desc: "Soporte iluminado blanco liso minimalista.",
-        image: ''
+        image: [
+          '/complementos/estante-led-0.png',
+          '/complementos/estante-led-1.png',
+        ]
       },
       {
         id: "ext6",
@@ -68,7 +81,9 @@ export const COMPLEMENTOS_DATA = [
         price: 20000,
         unit: "por unidad",
         desc: "Estructuras volumétricas luminosas de alto impacto. (Seña $10.000).",
-        image: ''
+        image: [
+          '/complementos/mariposas-led.png',
+        ]
       },
       {
         id: "ext8",
@@ -76,7 +91,9 @@ export const COMPLEMENTOS_DATA = [
         price: 18000,
         unit: "para bolsitas",
         desc: "Soporte artesanal rústico ideal para estilos boho o clásicos.",
-        image: ''
+        image: [
+          '/complementos/estante-bolsitas-mimbre.png',
+        ]
       },
       {
         id: "ext9",
@@ -84,7 +101,9 @@ export const COMPLEMENTOS_DATA = [
         price: 15000,
         unit: "para bolsitas",
         desc: "Organizador estético para los souvenirs o sorpresas.",
-        image: ''
+        image: [
+          '/complementos/estante-bolsitas.png',
+        ]
       }
     ]
   }
