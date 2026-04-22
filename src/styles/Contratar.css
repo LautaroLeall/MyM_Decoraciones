@@ -1,139 +1,117 @@
-.contratar-wrapper {
-  padding: 3rem 2rem;
-  margin: 0 auto;
-  max-width: 70rem;
+.booking-section {
+  background: var(--color-white);
+  max-width: 65rem;
 }
 
-.contratar-section-title {
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  color: var(--color-taupe);
-  text-transform: uppercase;
+.booking-title {
+  font-family: var(--font-signet);
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--color-text-main);
+  font-style: italic;
 }
 
-.contratar-step-badge {
-  background-color: var(--color-taupe);
-  color: var(--color-white);
-  font-family: var(--font-heading);
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  flex-shrink: 0;
-  box-shadow: 0px 10px 10px rgba(216, 193, 132, 0.4);
+.booking-sub {
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--color-text-soft);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
 }
 
-.contratar-steps-grid {
+@media (min-width: 640px) {
+  .booking-title {
+    font-size: 4rem;
+  }
+
+  .booking-sub {
+    font-size: 0.95rem;
+  }
+}
+
+.booking-grid {
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 768px) {
-  .contratar-steps-grid {
+@media (min-width: 1024px) {
+  .booking-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.contratar-step-card {
-  background-color: var(--color-white);
-  padding: 2rem;
-  box-shadow: 0 10px 30px rgba(122, 104, 87, 0.5);
-  border: 1px solid rgba(216, 193, 132, 0.7);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.booking-step-card {
+  border: 1px solid var(--color-pink-dark);
+  background: var(--color-beige-dark);
+  border-radius: 2.5rem;
+  transition: all 0.5s ease;
+  overflow: hidden;
 }
 
-.contratar-step-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: transparent;
-  transition: background-color 0.4s ease;
+.booking-step-card:hover {
+  background: var(--color-gold);
+  border-color: var(--color-text-main);
 }
 
-.contratar-step-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(122, 104, 87, 0.1);
+.booking-step-num-box {
+  width: 4rem;
+  height: 4rem;
+  background: var(--color-pink-dark);
+  color: var(--color-pink-light);
+  border-radius: 50%;
+  transition: all 0.5s ease;
 }
 
-.contratar-step-card:hover::after {
-  background-color: var(--color-gold);
+.booking-step-card:hover .booking-step-num-box {
+  transform: scale(1.1) rotate(10deg);
+  background: var(--color-gold-deep);
+  color: var(--color-text-main);
 }
 
-.contratar-step-name {
-  font-family: var(--font-heading);
-  color: var(--color-gold-dark);
-  font-size: 1.3rem;
-  line-height: 1.6;
+.booking-step-num {
+  font-family: var(--font-signet);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.booking-step-title {
+  font-family: var(--font-signet);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  font-style: italic;
+}
+
+.booking-step-desc {
+  font-size: 0.65rem;
+  color: var(--color-text-soft);
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.25em;
 }
 
-.contratar-step-desc {
-  font-family: var(--font-heading);
-  color: var(--color-gold-dark);
-  font-size: 1.05rem;
-  line-height: 1.6;
-}
-
-.contratar-conditions-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 50%;
-  height: 2px;
-  background-color: var(--color-gold);
-}
-
-.contratar-conditions-grid {
-  grid-template-columns: 1fr;
+.booking-cta-btn {
+  background-color: #25D366;
+  color: var(--color-white);
+  font-weight: 800;
+  border-radius: 100px;
+  font-size: 13px;
+  transition: all 0.4s ease;
+  width: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
 }
 
 @media (min-width: 640px) {
-  .contratar-conditions-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .booking-cta-btn {
+    width: auto;
   }
 }
 
-.contratar-condition-card {
-  background-color: var(--color-cream);
-  border-left: 5px solid var(--color-gold-dark);
-  box-shadow: 0 4px 16px var(--color-gold);
-  transition: transform 0.3s ease;
-}
-
-.contratar-condition-card:hover {
-  transform: translateX(8px);
-}
-
-.contratar-condition-name {
-  font-family: var(--font-heading);
-  color: var(--color-gold-dark);
-  font-size: 1.15rem;
-  line-height: 1.6;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.contratar-condition-desc {
-  font-family: var(--font-heading);
-  color: var(--color-gold-dark);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  .contratar-condition-desc {
-    font-size: 0.85rem;
-  }
-
-  .contratar-step-name {
-    font-size: 1.1rem;
-  }
-
-  .contratar-step-desc {
-    font-size: 0.9rem;
-  }
+.booking-cta-btn:hover {
+  box-shadow: 0 20px 40px rgba(37, 211, 102, 0.4);
+  transform: translateY(-5px);
+  background-color: #22c35e;
 }
