@@ -1,122 +1,128 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { CheckCircle2, Smile, Star } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import '../styles/Tamaños.css';
+
+const packagesData = [
+  {
+    id: 'soft', name: 'Soft Deco', size: '2 mts', highlight: false,
+    features: [
+      "Fondo Personalizado 1.5 mts",
+      "Alfombra 2 mts",
+      "Mesa Central + Detalles",
+      "Cartelería LED",
+      "Iluminación (2 Reflectores)",
+      "1 Bouquet 2m + 3 burbujas",
+      "1 Plataforma + 1 Personaje"
+    ]
+  },
+  {
+    id: 'mini', name: 'Mini Deco', size: '3 mts', highlight: false,
+    features: [
+      "Fondo Personalizado 3 mts",
+      "Alfombra 3 mts",
+      "1 Mesa Central + 2 Secundarias",
+      "4 Bandejas de pie + 4 espejadas",
+      "Cartelería LED + Nombre",
+      "Iluminación (4 Reflectores)",
+      "1 Bq 2m + 2 Bq 1m + 4 burbujas",
+      "1 Plataforma + 2 Personajes"
+    ]
+  },
+  {
+    id: 'express', name: 'Deco Express', size: '6 mts', highlight: false,
+    features: [
+      "Fondo Personalizado 6 mts",
+      "Alfombra 6 mts",
+      "1 Mesa Central + 4 Secundarias",
+      "6 Bandejas de pie + 6 espejadas",
+      "Cartelería LED + Nombre",
+      "Iluminación (6 Reflectores)",
+      "2 Bq 2m + 1 Bq 1m + 6 burbujas",
+      "2 Plataformas + 3 Personajes"
+    ]
+  },
+  {
+    id: 'premium', name: 'Deco Premium', size: '8 mts', highlight: false,
+    features: [
+      "Fondo Personalizado 8 mts",
+      "Alfombra 8 mts",
+      "1 Mesa Central + 6 Secundarias",
+      "8 Bandejas de pie + 8 espejadas",
+      "Cartelería LED + Nombre",
+      "Iluminación (8 Reflectores)",
+      "2 Bq 2m + 2 Bq 1.5m + 10 burbujas",
+      "3 Plataformas + 4 Personajes"
+    ]
+  },
+];
 
 const Tamaños = () => {
   const navigate = useNavigate();
+
   return (
-    <div className="tamanos-wrapper">
-      <div className="tamanos-header text-center mb-10">
-        <h2 className="tamanos-title mb-3">Elegí el tamaño ideal</h2>
-        <p className="tamanos-subtitle">
-          Comparamos nuestras opciones para que te sea más fácil decidir. Adaptamos cada diseño a la dimensión seleccionada.
-        </p>
+    <div className="tamanos-wrapper py-35 mx-auto px-5">
+      <div className="tamanos-header text-center mb-12">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="tamanos-title mb-4"
+        >
+          Descubrí tu <span className="text-beige">DECO</span> perfecta
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="tamanos-subtitle"
+        >
+          Elegí el tamaño que mejor se adapta a tu espacio.
+        </motion.p>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="tamanos-table-container mb-10"
-      >
-        <table className="tamanos-table text-left">
-          <thead className="tamanos-thead">
-            <tr>
-              <th className="tamanos-th-label"></th>
-              <th className="tamanos-th">
-                Soft Deco
-                <br />
-                <span className="tamanos-th-sub">1 Panel</span>
-              </th>
-              <th className="tamanos-th">
-                Mini Deco
-                <br />
-                <span className="tamanos-th-sub">3 mts</span>
-              </th>
-              <th className="tamanos-th">
-                Express Deco
-                <br />
-                <span className="tamanos-th-sub">5 mts</span>
-              </th>
-              <th className="tamanos-th">
-                Premium Deco
-                <br />
-                <span className="tamanos-th-sub">7 mts</span>
-              </th>
-              <th className="tamanos-th">
-                Gigante Deco
-                <br />
-                <span className="tamanos-th-sub">10 mts</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody className="tamanos-tbody">
-            <tr className="tamanos-row">
-              <td className="tamanos-td-label">Volumen de Globos</td>
-              <td className="tamanos-td">Detalle</td>
-              <td className="tamanos-td">Básico</td>
-              <td className="tamanos-td">Medio</td>
-              <td className="tamanos-td">Alto</td>
-              <td className="tamanos-td tamanos-td-highlight">Máximo</td>
-            </tr>
-            <tr className="tamanos-row">
-              <td className="tamanos-td-label">Iluminación LED</td>
-              <td className="tamanos-td">2 Focos</td>
-              <td className="tamanos-td">3 Focos</td>
-              <td className="tamanos-td">4 Focos</td>
-              <td className="tamanos-td">5 Focos</td>
-              <td className="tamanos-td">7 Focos</td>
-            </tr>
-            <tr className="tamanos-row">
-              <td className="tamanos-td-label">Mesas Centrales</td>
-              <td className="tamanos-td">1 Cilindro</td>
-              <td className="tamanos-td">1 Mesa</td>
-              <td className="tamanos-td">3 Cilindros</td>
-              <td className="tamanos-td">4 Cilindros</td>
-              <td className="tamanos-td">6 Cilindros</td>
-            </tr>
+      <div className="tamanos-cards-grid grid gap-5">
+        {packagesData.map((pkg, idx) => (
+          <motion.div
+            key={pkg.id}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 * idx, duration: 0.6 }}
+            className="tamanos-card relative flex flex-col py-10 px-6"
+          >
 
-            <tr className="tamanos-section-header">
-              <td colSpan="6" className="tamanos-section-title">
-                <Smile size={16} className="tamanos-section-icon" /> Mundo Infantil
-              </td>
-            </tr>
-            <tr className="tamanos-row">
-              <td className="tamanos-td-label">Personajes</td>
-              <td className="tamanos-td tamanos-td-sm">1 ind.</td>
-              <td className="tamanos-td tamanos-td-sm">1 ind.</td>
-              <td className="tamanos-td tamanos-td-sm">1 o más</td>
-              <td className="tamanos-td tamanos-td-sm">2 o más</td>
-              <td className="tamanos-td tamanos-td-sm">3 o más</td>
-            </tr>
+            <div className="tamanos-card-header text-center mb-5 pb-5">
+              <h3 className="tamanos-card-title mb-1.5">{pkg.name}</h3>
+              <span className="tamanos-card-size inline-block py-1.5 px-4">{pkg.size}</span>
+            </div>
 
-            <tr className="tamanos-section-header">
-              <td colSpan="6" className="tamanos-section-title">
-                <Star size={16} className="tamanos-section-icon" /> Celebraciones Especiales
-              </td>
-            </tr>
-            <tr className="tamanos-row">
-              <td className="tamanos-td-label">Cartel con Nombre</td>
-              <td className="tamanos-td tamanos-td-muted">No incluye</td>
-              <td className="tamanos-td tamanos-td-muted">Adicional</td>
-              <td className="tamanos-td tamanos-td-check"><CheckCircle2 className="tamanos-check-icon" size={20} /></td>
-              <td className="tamanos-td tamanos-td-check"><CheckCircle2 className="tamanos-check-icon" size={20} /></td>
-              <td className="tamanos-td tamanos-td-check"><CheckCircle2 className="tamanos-check-icon" size={20} /></td>
-            </tr>
-            <tr className="tamanos-btn-row">
-              <td className="tamanos-td-empty"></td>
-              {['soft', 'mini', 'express', 'premium', 'gigante'].map(id => (
-                <td key={id} className="tamanos-td">
-                  <button onClick={() => navigate(`/paquete/${id}`)} className="tamanos-detail-btn">
-                    Ver detalles
-                  </button>
-                </td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
-      </motion.div>
+            <div className="tamanos-card-body mb-8">
+              <ul className="tamanos-card-features flex flex-col gap-5 p-0 m-0">
+                {pkg.features.map((feat, fIdx) => (
+                  <li key={fIdx} className="flex items-start gap-2">
+                    <Check size={16} className="tamanos-check-icon mt-0.5" />
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="tamanos-card-footer mt-auto">
+              <button
+                onClick={() => navigate(`/paquete/${pkg.id}`)}
+                className="tamanos-card-btn inline-flex items-center justify-center gap-1 p-4"
+              >
+                Ver detalles <ArrowRight size={16} />
+              </button>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 };
