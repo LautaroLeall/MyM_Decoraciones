@@ -13,6 +13,8 @@
 @media (min-width: 768px) {
   .carrousel-main {
     aspect-ratio: 1/1;
+    width: 100%;
+    height: 25rem;
   }
 }
 
