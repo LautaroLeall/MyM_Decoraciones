@@ -1,253 +1,125 @@
 .tamanos-wrapper {
-  padding: 3rem 1rem;
-  margin: 0 auto;
-  max-width: 70rem;
+  background: var(--color-white);
+  max-width: 85rem;
 }
 
 .tamanos-title {
-  font-family: var(--font-heading);
+  font-family: var(--font-signet);
   font-size: 2.5rem;
-  color: var(--color-taupe);
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.tamanos-subtitle {
-  font-family: var(--font-heading);
-  color: var(--color-gold-dark);
-  font-size: 1.1rem;
-  max-width: 45rem;
-  margin: 0 auto;
-  line-height: 1.6;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.tamanos-table-container {
-  background: var(--color-white);
-  box-shadow: 0 0 40px var(--color-gold);
-  border: 1px solid var(--color-gold-dark);
-  border-radius: 1rem;
-  max-width: 70rem;
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin-bottom: 2.5rem;
-}
-
-.tamanos-table-container::-webkit-scrollbar {
-  height: 8px;
-}
-
-.tamanos-table-container::-webkit-scrollbar-track {
-  background-color: var(--color-cream);
-  border-radius: 0 0 1rem 1rem;
-}
-
-.tamanos-table-container::-webkit-scrollbar-thumb {
-  background-color: var(--color-gold);
-  border-radius: 10px;
-}
-
-.tamanos-table-container::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color-gold-dark);
-}
-
-.tamanos-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 800px;
-}
-
-.tamanos-thead {
-  background-color: var(--color-gold);
-  border-bottom: 2px solid var(--color-gold-dark);
-}
-
-.tamanos-th {
-  width: 16.66%;
-  border-right: 1px solid var(--color-gold);
-  font-family: var(--font-heading);
-  color: var(--color-white);
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 1rem;
-  padding: 1.5rem;
-}
-
-.tamanos-th:last-child {
-  border-right: none;
-}
-
-.tamanos-th-sub {
-  font-family: var(--font-heading);
-  color: var(--color-gold-dark);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.8rem;
-  display: block;
-  margin-top: 0.25rem;
-}
-
-.tamanos-tbody tr:nth-child(even) {
-  background-color: rgba(241, 227, 221, 0.2);
-}
-
-.tamanos-tbody tr+tr {
-  border-top: 1px solid rgba(122, 104, 87, 0.1);
-}
-
-.tamanos-row {
-  transition: background-color 0.3s ease;
-}
-
-.tamanos-row:hover {
-  background-color: rgba(165, 216, 212, 0.15);
-}
-
-.tamanos-td-label {
-  font-family: var(--font-heading);
-  color: var(--color-gold-dark);
-  border-right: 1px solid rgba(122, 104, 87, 0.1);
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  padding: 1.25rem 1.5rem;
-}
-
-.tamanos-td {
-  border-right: 1px solid rgba(122, 104, 87, 0.1);
-  font-family: var(--font-heading);
-  color: var(--color-taupe);
-  font-size: 1rem;
-  text-align: center;
-  padding: 1.25rem 1rem;
-}
-
-.tamanos-td:last-child {
-  border-right: none;
-}
-
-.tamanos-td-highlight {
-  color: var(--color-gold-dark);
   font-weight: 800;
-  background-color: rgba(216, 193, 132, 0.05);
-}
-
-.tamanos-td-sm {
-  font-size: 1rem;
-}
-
-.tamanos-td-muted {
-  font-size: 1rem;
-  color: var(--color-gold);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--color-text-main);
   font-style: italic;
 }
 
-.tamanos-td-check {
-  color: var(--color-taupe);
+.text-beige {
+  color: var(--color-gold-deep);
 }
 
-.tamanos-check-icon {
-  margin: 0 auto;
+.tamanos-subtitle {
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--color-text-soft);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
 }
 
-.tamanos-section-title {
-  font-family: var(--font-heading);
-  color: var(--color-taupe);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 1rem 1.5rem;
-  font-weight: 700;
-  font-size: 1rem;
+@media (min-width: 640px) {
+  .tamanos-title {
+    font-size: 4rem;
+  }
+
+  .tamanos-subtitle {
+    font-size: 0.95rem;
+  }
 }
 
-.tamanos-section-icon {
-  display: inline;
-  margin-right: 0.5rem;
-  vertical-align: middle;
-  color: var(--color-taupe);
+.tamanos-cards-grid {
+  grid-template-columns: 1fr;
 }
 
-.tamanos-btn-row {
-  background-color: var(--color-white);
+@media (min-width: 768px) {
+  .tamanos-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.tamanos-td-empty {
-  padding: 1.5rem;
-  border-right: 1px solid rgba(122, 104, 87, 0.1);
+@media (min-width: 1024px) {
+  .tamanos-cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
 }
 
-.tamanos-detail-btn {
-  width: 100%;
-  border: 1px solid var(--color-gold);
-  font-family: var(--font-heading);
-  color: var(--color-taupe);
-  background-color: transparent;
-  text-transform: uppercase;
-  border-radius: 9999px;
-  padding: 0.75rem 1rem;
-  margin: 0 auto;
-  font-weight: 600;
-  letter-spacing: 1px;
-  font-size: 0.8rem;
-  display: block;
-  cursor: pointer;
+.tamanos-card {
+  background: var(--color-beige-dark);
+  border: 1px solid var(--color-pink-dark);
+  border-radius: 2rem;
   transition: all 0.4s ease;
 }
 
-.tamanos-detail-btn:hover {
-  background-color: var(--color-gold);
-  border-color: var(--color-gold-dark);
-  color: var(--color-white);
-  transform: translateY(-5px);
+.tamanos-card:hover {
+  box-shadow: 0 20px 40px var(--color-pink-dark);
 }
 
-@media (max-width: 768px) {
-  .tamanos-table-container {
-    margin-bottom: 0;
-  }
+.tamanos-card-header {
+  border-bottom: 1px solid var(--color-pink-dark);
+}
 
-  .tamanos-td-label {
-    font-size: 0.8rem;
-  }
+.tamanos-card-title {
+  font-family: var(--font-signet);
+  color: var(--color-text-main);
+  font-size: 1.75rem;
+  font-weight: 800;
+}
 
-  .tamanos-td {
-    font-size: 0.8rem;
-  }
+.tamanos-card-size {
+  background: var(--color-pink-dark);
+  color: var(--color-beige);
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
 
-  .tamanos-th {
-    font-size: 0.7rem;
-  }
+.tamanos-card-body {
+  flex-grow: 1;
+}
 
-  .tamanos-th-sub {
-    font-size: 0.6rem;
-  }
+.tamanos-card-features {
+  list-style: none;
+}
 
-  .tamanos-section-title {
-    font-size: 0.8rem;
-  }
+.tamanos-card-features li {
+  font-size: 0.8rem;
+  color: var(--color-text-soft);
+  line-height: 1.5;
+  font-weight: 500;
+}
 
-  .tamanos-detail-btn {
-    font-size: 0.6rem;
-  }
+.tamanos-check-icon {
+  color: var(--color-gold-deep);
+  flex-shrink: 0;
+}
 
-  .tamanos-td-label {
-    padding: 1rem 1.5rem;
-  }
+.tamanos-card-btn {
+  width: 100%;
+  border-radius: 100px;
+  background: var(--color-gold);
+  color: var(--color-text-main);
+  border: 1px solid var(--color-text-main);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-  .tamanos-td {
-    padding: 1rem 1rem;
-  }
-
-  .tamanos-th {
-    padding: 1rem 1rem;
-  }
-
-  .tamanos-section-title {
-    padding: 1rem 1.5rem;
-  }
-
-  .tamanos-detail-btn {
-    padding: 0.75rem 1rem;
-  }
+.tamanos-card-btn:hover {
+  background: var(--color-gold-deep);
+  color: var(--color-beige);
+  border-color: var(--color-gold-deep);
 }
