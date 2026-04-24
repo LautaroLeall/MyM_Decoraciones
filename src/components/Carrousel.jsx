@@ -1,70 +1,66 @@
+import { useState } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { PACKAGES } from '../data/DataPaq';
-import {
-    ChevronLeft,
-    ChevronRight
-} from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import '../styles/Carrousel.css';
 
-const Carrousel = () => {
-    const { id } = useParams();
-    const pkg = PACKAGES.find(p => p.id === id);
-    const [currentImgIndex, setCurrentImgIndex] = useState(0);
+const Carrousel = ({ images = [], name = 'Decoración' }) => {
+  const [index, setIndex] = useState(0);
 
-    if (!pkg) return <div>Paquete no encontrado</div>;
+  const handleNext = () => setIndex((prev) => (prev + 1) % images.length);
+  const handlePrev = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
 
-    const nextImage = () => {
-        setCurrentImgIndex((prev) => (prev + 1) % pkg.images.length);
-    };
+  return (
+    <div className="carrousel-wrapper flex flex-col gap-3">
+      <div className="carrousel-main relative">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={index}
+            src={images[index]}
+            alt={`${name} - Vista ${index + 1}`}
+            className="carrousel-img absolute"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            onError={(e) => {
+              e.target.src = 'https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=1200';
+            }}
+          />
+        </AnimatePresence>
 
-    const prevImage = () => {
-        setCurrentImgIndex((prev) => (prev - 1 + pkg.images.length) % pkg.images.length);
-    };
-
-    return (
-        <div className="detalles-header relative flex items-center justify-center group">
-
-            <AnimatePresence mode="wait">
-                <motion.img
-                    key={currentImgIndex}
-                    src={pkg.images[currentImgIndex]}
-                    alt={`${pkg.name} - Imagen ${currentImgIndex + 1}`}
-                    className="detalles-header-img"
-                    initial={{ opacity: 0.5 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0.5 }}
-                />
-            </AnimatePresence>
-
+        {images.length > 1 && (
+          <>
             <button
-                onClick={prevImage}
-                className="btn-img btn-prev-img absolute p-2"
-                aria-label="Imagen anterior"
-            >
-                <ChevronLeft className="btn-img-icon" />
+              onClick={handlePrev}
+              className="carrousel-btn absolute flex justify-center items-center btn-left">
+              <ChevronLeft size={14} />
             </button>
-
             <button
-                onClick={nextImage}
-                className="btn-img btn-next-img absolute p-2"
-                aria-label="Siguiente imagen"
-            >
-                <ChevronRight className="btn-img-icon" />
+              onClick={handleNext}
+              className="carrousel-btn absolute flex justify-center items-center btn-right">
+              <ChevronRight size={14} />
             </button>
+          </>
+        )}
+      </div>
 
-            {/* Pagination indicators */}
-            <div className="detalles-pagination absolute flex gap-4">
-                {pkg.images.map((_, idx) => (
-                    <div
-                        key={idx}
-                        className={`detalles-pagination-dot ${idx === currentImgIndex ? 'bg-white scale-125' : 'bg-white/50'}`}
-                    />
-                ))}
-            </div>
+      {images.length > 1 && (
+        <div className="carrousel-thumbnails flex gap-2 pb-1.5">
+          {images.map((img, i) => (
+            <button
+              key={i}
+              onClick={() => setIndex(i)}
+              className={`carrousel-thumb p-0 ${i === index ? 'active' : ''}`}
+              aria-label={`Ver imagen ${i + 1}`}
+            >
+              <img src={img} alt={`Miniatura ${i + 1}`} />
+            </button>
+          ))}
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
 export default Carrousel;
