@@ -2,7 +2,7 @@ import DetallesPaq from '../components/DetallesPaq';
 
 const PaqueteId = () => {
     return (
-        <div className="pt-25 pb-10">
+        <div className="page-section-wrapper">
             <DetallesPaq />
         </div>
     );
