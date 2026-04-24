@@ -2,7 +2,7 @@ import Tamaños from '../components/Tamaños';
 
 const PaquetesPage = () => {
     return (
-        <div className="pt-22 pb-10">
+        <div className="page-section-wrapper">
             <Tamaños />
         </div>
     );
