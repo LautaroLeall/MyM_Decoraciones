@@ -1,137 +1,110 @@
+import { useParams, Link } from 'react-router-dom';
 // eslint-disable-next-line no-unused-vars
-import { motion, AnimatePresence } from 'framer-motion';
-import { useParams, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { CheckCircle2, ArrowLeft, MessageCircle, Sparkles } from 'lucide-react';
 import { PACKAGES } from '../data/DataPaq';
-import {
-  ArrowLeft,
-  CheckCircle2,
-  Smile,
-  Star,
-  Info,
-  PartyPopper,
-} from 'lucide-react';
 import Carrousel from './Carrousel';
 import '../styles/DetallesPaq.css';
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+};
+
 const DetallesPaq = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const pkg = PACKAGES.find(p => p.id === id);
 
-  if (!pkg) return <div>Paquete no encontrado</div>;
+  const formatCurrency = (val) => new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 }).format(val);
+
+  const wpUrl = `https://wa.me/5493814430041?text=${encodeURIComponent(`¡Hola MyM! ✨ Quiero reservar la propuesta *${pkg.name}* (${pkg.size}). ¿Tienen disponibilidad?`)}`;
 
   return (
-    <div className="detalles-container">
+    <div className="details-page-wrapper pt-35 pb-25 mx-auto px-5">
+      <div className="details-container my-0 mx-auto">
+        <Link to="/paquetes" className="details-back-link inline-flex items-center mb-8">
+          <ArrowLeft size={16} className="mr-2" /> Comparar propuestas
+        </Link>
 
-      <button onClick={() => navigate('/paquetes')} className="detalles-back-btn inline-flex items-center p-0 mb-8">
-        <ArrowLeft size={20} className="detalles-back-icon mr-2" />
-        Volver a comparativa
-      </button>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          className="details-grid grid gap-15"
+        >
+          {/* Visual Side: Carousel */}
+          <div className="details-visual-col flex flex-col gap-8">
+            <Carrousel images={pkg.images} name={pkg.name} />
 
-      <Carrousel />
-
-      <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="detalles-card">
-
-        <div className="detalles-content p-8">
-          <div className="detalles-top-section flex flex-col justify-between items-start gap-10 mb-10">
-            <div className="detalles-title-box">
-              <h1 className="detalles-title text-center mb-0">{pkg.name}</h1>
-              <span className="detalles-badge inline-block text-center mb-5">
-                Dimensión:
-                {pkg.size}
-              </span>
-              <p className="detalles-desc">{pkg.shortDesc}</p>
-            </div>
-
-            <div className="detalles-quote-box relative text-center">
-              <p className="detalles-quote-sub mb-1 p-0">Cotización a medida</p>
-              <p className="detalles-quote-title mb-4">Consultar Valor</p>
-              <motion.a
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.96 }}
-                href={`https://wa.me/5493814430041?text=${encodeURIComponent(`¡Hola MyM! Quiero consultar presupuesto para el paquete *${pkg.name}* (${pkg.size}).`)}`}
-                target="_blank" rel="noopener noreferrer"
-                className="detalles-paq-btn inline-flex items-center justify-center gap-3 mb-0 p-4"
-              >
-                <PartyPopper size={20} />
-                Contratar
-              </motion.a>
-              <p className="detalles-quote-note text-center mt-4">
-                *Flete y traslado se cotizan según zona
+            <div className="details-notice-box items-start flex py-4 px-6 gap-3">
+              <Sparkles className="details-notice-icon" size={24} />
+              <p>
+                <strong>Nota de Excelencia:</strong> Las imágenes son ilustrativas. Diseñamos composiciones únicas y personalizadas según la temática elegida para tu evento.
               </p>
             </div>
           </div>
 
-          <div className="detalles-features-section pt-10">
-            <h3 className="detalles-features-heading mb-5">
-              ¿Qué incluye la estructura base?
+          {/* Info Side: Text, Features, Pricing */}
+          <div className="details-info-col flex flex-col">
+            <span className="details-badge inline-block mb-2">
+              Escala: {pkg.size}
+            </span>
+            <h1 className="details-title mb-2">{pkg.name}</h1>
+            <p className="details-desc">{pkg.shortDesc}</p>
+
+            <div className="details-divider my-5" />
+
+            <h3 className="details-subtitle mb-5">
+              ¿Qué incluye este diseño?
             </h3>
-            <div className="detalles-features-grid grid">
+            <ul className="details-features-list grid gap-4 p-0 m-0 mb-10">
               {pkg.features.map((feature, idx) => (
-                <motion.div key={idx} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.1 }} className="detalles-feature-item flex items-start p-3.5">
-
-                  <CheckCircle2 size={20} className="detalles-feature-icon mr-2" />
-                  <span className="detalles-feature-text">{feature}</span>
-
-                </motion.div>
+                <motion.li
+                  key={idx}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 + (idx * 0.05) }}
+                  className="flex items-center gap-2.5"
+                >
+                  <CheckCircle2 size={20} className="details-feature-icon" />
+                  <span>{feature}</span>
+                </motion.li>
               ))}
-            </div>
-          </div>
+            </ul>
 
-          <div className="detalles-diff-section pt-8 mt-10">
-            <div className="detalles-diff-header text-center mb-8">
-              <h3 className="detalles-diff-heading mb-1.5">Diferencias según tu evento</h3>
-              <p className="detalles-diff-sub">
-                Adaptamos el paquete según el estilo de celebración.
-              </p>
-            </div>
-            <div className="detalles-diff-grid grid gap-8">
-
-              <div className="detalles-diff-card detalles-diff-infantil">
-                <h4 className="detalles-diff-title -infantil">
-                  <Smile className="detalles-diff-icon -infantil" size={24} />
-                  Mundo Infantil
-                </h4>
-                <p className="detalles-diff-desc -infantil">
-                  Fantasía, colores y diversión.
-                  <br />
-                  <strong className="detalles-diff-highlight -infantil">
-                    {pkg.infantiles}
-                  </strong>
-                </p>
+            <div className="details-action-card text-center p-5">
+              <div className="details-price-wrap mb-6">
+                <span className="details-price-label block mb-2">
+                  Valor Total Estimado
+                </span>
+                <span className="details-price-main block">
+                  {formatCurrency(pkg.price)}
+                </span>
+                <span className="details-price-sena block mt-1.5">
+                  Reserva tu fecha con {formatCurrency(pkg.sena)}
+                </span>
               </div>
 
-              <div className="detalles-diff-card detalles-diff-eventos">
-                <h4 className="detalles-diff-title -eventos">
-                  <Star className="detalles-diff-icon -eventos" size={24} />
-                  Celebraciones Especiales
-                </h4>
-                <p className="detalles-diff-desc -eventos">
-                  Elegancia, estética premium y volumen.
-                  <br />
-                  <strong className="detalles-diff-highlight -eventos">
-                    {pkg.eventos}
-                  </strong>
-                </p>
-              </div>
+              <motion.a
+                whileTap={{ scale: 0.98 }}
+                href={wpUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="details-cta-btn inline-flex items-center justify-center gap-2.5 py-3.5 px-10"
+              >
+                <MessageCircle size={18} /> Reservar Fecha
+              </motion.a>
 
-            </div>
-          </div>
-
-          <div className="detalles-note-box flex items-start gap-4 mt-10 p-8">
-            <Info className="detalles-note-icon" />
-            <div>
-              <h4 className="detalles-note-title mb-2">Nota importante de diseño</h4>
-              <p className="detalles-note-text">
-                Inspirándonos en tu temática, utilizaremos nuestros recursos para conseguir un espacio soñado.
-                No cuantificamos estrictamente la cantidad de objetos decorativos menores, sino que nos enfocamos en el resultado global.
+              <p className="details-terms mt-4">
+                * El saldo restante se abona hasta el día del evento.<br />
+                * Traslado y viáticos se cotizan según zona geográfica.
               </p>
             </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </div>
   );
 };
-
 export default DetallesPaq;
