@@ -30,7 +30,6 @@ const CtaFinal = () => {
             Escribinos ahora para verificar disponibilidad y congelar el valor con tu seña.
           </p>
           <motion.a
-            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             href={wpUrl}
             target="_blank"
