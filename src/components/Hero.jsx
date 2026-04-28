@@ -36,7 +36,7 @@ const Hero = () => {
         <div className="hero-bg-overlay absolute"></div>
       </motion.div>
 
-      {/* Content */} 
+      {/* Content */}
       <div className="hero-content-inner relative mx-auto pt-10">
         <Reveal>
           <span className="hero-location-badge inline-flex items-center mb-6 px-5 py-2.5">
@@ -62,7 +62,6 @@ const Hero = () => {
         <Reveal delay={0.3}>
           <div className="hero-actions-group flex flex-col justify-center items-center gap-7">
             <motion.a
-              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href={wpUrl}
               target="_blank"
@@ -73,7 +72,6 @@ const Hero = () => {
             </motion.a>
 
             <motion.button
-              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => navigate('/paquetes')}
               className="hero-cta-secondary inline-flex items-center justify-center gap-2 px-6 py-5"
