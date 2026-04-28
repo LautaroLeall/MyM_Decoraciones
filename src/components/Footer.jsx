@@ -23,7 +23,7 @@ const Footer = () => {
           {/* Column 1: Brand */}
           <div className="footer-brand-col">
             <Link to="/" className="footer-logo-link inline-block">
-              <img src="/logo_MyM.png" alt="MyM Decoraciones" className="footer-logo-img p-1" />
+              <img src="/logo-MyM.png" alt="MyM Decoraciones" className="footer-logo-img p-1" />
             </Link>
           </div>
 

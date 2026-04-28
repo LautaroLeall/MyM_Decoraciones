@@ -58,7 +58,7 @@ const Navbar = () => {
           >
             <div className="navbar-logo-image-container flex items-center">
               <img
-                src="/logo_MyM-sinFondo.png"
+                src="/logo-MyM-sinFondo.png"
                 alt="MyM Decoraciones Logo"
                 className="navbar-logo-img"
               />
