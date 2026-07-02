@@ -84,7 +84,7 @@ const Contratar = () => {
               <div className="booking-step-icon">{step.icon}</div>
             </div>
             <div className="booking-step-content">
-              <h3 className="booking-step-title mb-3">{step.title}</h3>
+              <h2 className="booking-step-title mb-3">{step.title}</h2>
               <p className="booking-step-desc">{step.desc}</p>
             </div>
           </motion.div>

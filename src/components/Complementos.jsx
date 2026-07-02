@@ -57,7 +57,7 @@ const ExtraModal = ({ extra, onClose }) => {
         className="addon-modal-content relative"
         onClick={(e) => e.stopPropagation()}
       >
-        <button onClick={onClose} className="addon-modal-close absolute flex justify-center items-center">
+        <button onClick={onClose} aria-label="Cerrar modal" className="addon-modal-close absolute flex justify-center items-center">
           <X size={24} />
         </button>
 
@@ -79,10 +79,10 @@ const ExtraModal = ({ extra, onClose }) => {
 
               {imagesList.length > 1 && (
                 <>
-                  <button onClick={prevImg} className="addon-carousel-btn addon-carousel-prev absolute flex justify-center items-center">
+                  <button onClick={prevImg} aria-label="Imagen anterior" className="addon-carousel-btn addon-carousel-prev absolute flex justify-center items-center">
                     <ChevronLeft size={20} />
                   </button>
-                  <button onClick={nextImg} className="addon-carousel-btn addon-carousel-next absolute flex justify-center items-center">
+                  <button onClick={nextImg} aria-label="Siguiente imagen" className="addon-carousel-btn addon-carousel-next absolute flex justify-center items-center">
                     <ChevronRight size={20} />
                   </button>
                   <div className="addon-carousel-dots absolute flex justify-center gap-3">
@@ -90,6 +90,7 @@ const ExtraModal = ({ extra, onClose }) => {
                       <button
                         key={idx}
                         className={`addon-carousel-dot p-0 ${idx === currentImgIndex ? 'active' : ''}`}
+                        aria-label={`Ver imagen ${idx + 1}`}
                         onClick={(e) => {
                           e.stopPropagation();
                           setCurrentImgIndex(idx);
