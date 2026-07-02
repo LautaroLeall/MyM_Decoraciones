@@ -1,6 +1,6 @@
 import Hero from '../components/Hero';
 import Info from '../components/Info';
-import Paquetes from '../components/Paquetes';
+import ResumenPaquetes from '../components/ResumenPaquetes';
 import CtaFinal from '../components/CtaFinal';
 import ProcessConditions from '../components/ProcessConditions';
 
@@ -11,7 +11,7 @@ const Home = () => {
             <Info />
             <ProcessConditions />
             <div className="home-paquetes-wrapper flex flex-col">
-                <Paquetes />
+                <ResumenPaquetes />
             </div>
             <CtaFinal />
         </main>

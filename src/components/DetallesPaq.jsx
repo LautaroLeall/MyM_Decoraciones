@@ -54,9 +54,9 @@ const DetallesPaq = () => {
 
             <div className="details-divider my-5" />
 
-            <h3 className="details-subtitle mb-5">
+            <h2 className="details-subtitle mb-5">
               ¿Qué incluye este diseño?
-            </h3>
+            </h2>
             <ul className="details-features-list grid gap-4 p-0 m-0 mb-10">
               {pkg.features.map((feature, idx) => (
                 <motion.li

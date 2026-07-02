@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Gem, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { PACKAGES } from '../data/DataPaq';
-import '../styles/Paquetes.css';
+import '../styles/ResumenPaquetes.css';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -27,7 +27,7 @@ const Reveal = ({ children, className = "", delay = 0 }) => (
   </motion.div>
 );
 
-const Paquetes = () => {
+const ResumenPaquetes = () => {
   const navigate = useNavigate();
 
   return (
@@ -82,4 +82,4 @@ const Paquetes = () => {
   );
 };
 
-export default Paquetes;
+export default ResumenPaquetes;
