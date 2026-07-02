@@ -33,11 +33,13 @@ const Carrousel = ({ images = [], name = 'Decoración' }) => {
           <>
             <button
               onClick={handlePrev}
+              aria-label="Imagen anterior"
               className="carrousel-btn absolute flex justify-center items-center btn-left">
               <ChevronLeft size={14} />
             </button>
             <button
               onClick={handleNext}
+              aria-label="Siguiente imagen"
               className="carrousel-btn absolute flex justify-center items-center btn-right">
               <ChevronRight size={14} />
             </button>
@@ -54,7 +56,7 @@ const Carrousel = ({ images = [], name = 'Decoración' }) => {
               className={`carrousel-thumb p-0 ${i === index ? 'active' : ''}`}
               aria-label={`Ver imagen ${i + 1}`}
             >
-              <img src={img} alt={`Miniatura ${i + 1}`} />
+              <img src={img} alt={`Miniatura ${i + 1}`} loading="lazy" />
             </button>
           ))}
         </div>
