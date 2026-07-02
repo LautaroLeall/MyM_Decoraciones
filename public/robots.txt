@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mym-decoraciones.netlify.app/sitemap.xml

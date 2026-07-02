@@ -15,9 +15,9 @@ const ContactCom = () => {
       <div className="contactcom-glow absolute" />
 
       <div className="contactcom-inner relative">
-        <h3 className="contactcom-title mb-5">
+        <h2 className="contactcom-title mb-5">
           ¿Querés agregar estos detalles a tu fiesta?
-        </h3>
+        </h2>
         <p className="contactcom-desc mb-8">
           Solicitá los complementos con anticipación para asegurar disponibilidad el día de tu evento.
           <br />
